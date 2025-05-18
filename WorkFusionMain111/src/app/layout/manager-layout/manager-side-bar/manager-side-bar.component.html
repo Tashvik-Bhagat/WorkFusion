@@ -1,0 +1,52 @@
+<nav class="manager-sidebar">
+  <div class="profile-container">
+    <div class="profile-pic">
+      <img *ngIf="userImage" [src]="'data:image/jpeg;base64,' + userImage" alt="Profile Picture" />
+      <img *ngIf="!userImage" src="assets/default-profile.jpg" alt="Default Profile Picture" /> <!-- Fallback image -->
+    </div>
+    <div class="manager-info">
+      <span class="manager-name">{{ userName }}</span>
+    </div>
+  </div>
+  <a routerLink="managerhome" routerLinkActive="active">
+    <i class="fas fa-tachometer-alt"></i> Dashboard
+  </a>
+  <a routerLink="all-team-members" routerLinkActive="active">
+    <i class="fas fa-users"></i> Team Members
+  </a>
+
+  <!-- Projects Link with Click to Toggle Add Project Field -->
+  <a (click)="toggleProjectOptions()" routerLink="managerprojects" routerLinkActive="active">
+    <i class="fas fa-folder-open"></i> Projects
+</a>
+
+<!-- Conditionally show Add Project link -->
+<div *ngIf="showProjectOptions" style="margin-left: 20px;">
+  <a routerLink="list-all-projects" routerLinkActive="active">
+    <i class="fas fa-list"></i> projects list
+  </a>
+  
+  <a routerLink="projects-requests" routerLinkActive="active">
+    <i class="fas fa-folder-plus"></i> Add Project
+  </a>
+</div>
+
+  <a routerLink="list-all-tasks" routerLinkActive="active">
+    <i class="fas fa-tasks"></i> Task Assignment
+  </a>
+  <!-- <a routerLink="managerperformance" routerLinkActive="active">
+    <i class="fas fa-chart-line"></i> Performance Reviews
+  </a> -->
+  <!-- <a routerLink="managerreports" routerLinkActive="active">
+    <i class="fas fa-file-alt"></i> Reports
+  </a> -->
+  <a routerLink="/manager/manager-welcome" routerLinkActive="active">
+    <i class="fa-solid fa-comments"></i> Chat
+  </a>
+  <a routerLink="pending-leaves" routerLinkActive="active">
+    <i class="fas fa-plane"></i> Leave Approvals
+  </a>
+  <a routerLink="/manager/manager-settings" routerLinkActive="active">
+    <i class="fa-solid fa-cog"></i> Settings
+  </a>
+</nav>

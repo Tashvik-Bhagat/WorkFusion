@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #FEF9F2; /* Warm off-white background */
+}
+
+/* Services Container */
+.services-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #FFE3E3, #789DBC); /* Soft pink and blue gradient */
+    margin-top: 80px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header for Services Section */
+.services-header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #789DBC; /* Medium blue-gray color */
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Service List */
+.service-list {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* Individual Service Item */
+.service-item {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #FFE3E3; /* Soft pink background for each card */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0 10px;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Service Content */
+.service-content {
+    padding: 30px;
+    flex: 1;
+    min-width: 300px;
+    background-color: #FEF9F2; /* Off-white for content section */
+}
+
+/* Service Image */
+.service-image {
+    max-width: 300px;
+    border-radius: 12px 0 0 12px;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+    background-color: #789DBC; /* Blue-gray background for image container */
+}
+
+.service-item:hover .service-image {
+    transform: scale(1.05);
+}
+
+/* Ordering for Alternating Layouts */
+.service-item:nth-child(odd) .service-image {
+    order: 1;
+}
+
+.service-item:nth-child(even) .service-content {
+    order: 1;
+}
+
+/* Typography and Colors */
+h2 {
+    color: #789DBC; /* Blue-gray accent for headings */
+    margin-top: 0;
+    font-size: 1.5em;
+}
+
+p {
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-item {
+        flex-direction: column;
+    }
+    
+    .service-image {
+        border-radius: 12px 12px 0 0;
+        max-width: 100%;
+    }
+    
+    .service-content {
+        padding: 20px;
+    }
+}

@@ -1,0 +1,133 @@
+<div class="page-container">
+  <!-- Back Button positioned outside the form container -->
+  <button class="back-button" (click)="goBack()">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+  <ngx-spinner bdColor="rgba(255, 255, 255, 0.6)" size="medium" color="#4caf50" type="ball-clip-rotate"></ngx-spinner>
+
+  <div class="update-employee-container">
+    <h2>Update Employee</h2>
+
+
+    <form [formGroup]="updateEmployeeForm" (ngSubmit)="onSubmit()">
+      <!-- Row 1: Employee ID, User ID, Active Status -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Employee ID:</label>
+          <input type="text" formControlName="employeeId" readonly class="readonly-input">
+        </div>
+        <div class="form-group">
+          <label>User ID:</label>
+          <input type="text" formControlName="userId" readonly class="readonly-input">
+        </div>
+        <div class="form-group">
+          <label>Status:</label>
+          <input type="text" formControlName="isActive" readonly class="readonly-input">
+        </div>
+      </div>
+
+      <!-- Row 2: First Name, Last Name -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name:</label>
+          <input type="text" formControlName="firstName">
+        </div>
+        <div class="form-group">
+          <label>Last Name:</label>
+          <input type="text" formControlName="lastName">
+        </div>
+      </div>
+
+      <!-- Row 3: Gender -->
+      <div class="form-row">
+        <label>Gender:</label>
+        <div class="radio-group">
+          <label>
+            <input type="radio" formControlName="gender" value="Male"> Male
+          </label>
+          <label>
+            <input type="radio" formControlName="gender" value="Female"> Female
+          </label>
+        </div>
+      </div>
+
+      <!-- Row 4: Email, Phone -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" formControlName="email">
+        </div>
+        <div class="form-group">
+          <label>Phone:</label>
+          <input type="text" formControlName="phone">
+        </div>
+      </div>
+<!-- Row 7: ID Type, ID Number -->
+<div class="form-row">
+  <div class="form-group">
+    <label>ID Type:</label>
+    <select formControlName="idType">
+      <option value="National">National</option>
+      <option value="Driver's License">Driver's License</option>
+      <option value="Passport">Passport</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>ID Number:</label>
+    <input type="text" formControlName="idNumber">
+  </div>
+</div>
+
+<!-- Row 8: Date of Birth, Hire Date, Department ID -->
+<div class="form-row">
+  <div class="form-group">
+    <label>Date of Birth:</label>
+    <input type="date" formControlName="dateOfBirth">
+  </div>
+  <div class="form-group">
+    <label>Hire Date:</label>
+    <input type="date" formControlName="hireDate">
+  </div>
+  <div class="form-group">
+    <label for="departmentId">Department</label>
+    <select id="departmentId" formControlName="departmentId" class="form-control" (focus)="onDepartmentFocus()">
+      <option value="" disabled>Select Department</option>
+      <option *ngFor="let department of departments" [value]="department.departmentId">{{ department.departmentName }}</option>
+    </select>
+  </div>
+</div>
+      <!-- Row 5: Present Address -->
+      <div class="form-row">
+        <label>Present Address:</label>
+        <input type="text" formControlName="presentAddress">
+      </div>
+
+      <!-- Row 6: Permanent Address -->
+      <div class="form-row">
+        <label>Permanent Address:</label>
+        <input type="text" formControlName="permanentAddress">
+      </div>
+
+    
+
+      <!-- Row 9: Created At -->
+      <div class="form-row">
+        <label>Created At:</label>
+        <input type="text" formControlName="createdAt" readonly class="readonly-input">
+      </div>
+
+      <!-- Row 10: Current Salary, Update Employee Image -->
+      <div class="form-row">
+        <div class="form-group">
+          <label>Current Salary:</label>
+          <input type="number" formControlName="currentSalary">
+        </div>
+        <div class="form-group">
+          <label>Update Employee Image:</label>
+          <input type="file" (change)="onFileChange($event)" />
+        </div>
+      </div>
+
+      <button type="submit" class="submit-button" >Submit</button>  </form>
+  </div>
+</div>

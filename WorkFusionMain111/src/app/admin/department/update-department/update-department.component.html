@@ -1,0 +1,40 @@
+<div class="update-department-container">
+    <h2>Update Department</h2>
+  
+    <!-- Loading Spinner -->
+    <div *ngIf="isLoading" class="spinner-container">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
+  
+    <!-- Department Update Form -->
+    <form [formGroup]="departmentForm" (ngSubmit)="updateDepartment()" *ngIf="!isLoading">
+      <div class="form-group">
+        <label for="departmentName">Department Name</label>
+        <input
+          id="departmentName"
+          type="text"
+          formControlName="departmentName"
+          placeholder="Enter department name"
+          [ngClass]="{'invalid': departmentForm.get('departmentName')?.invalid && departmentForm.get('departmentName')?.touched}"
+        />
+      </div>
+  
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          formControlName="description"
+          placeholder="Enter department description"
+          rows="4"
+          [ngClass]="{'invalid': departmentForm.get('description')?.invalid && departmentForm.get('description')?.touched}"
+        ></textarea>
+      </div>
+  
+      <div class="button-container">
+        <button type="submit" class="update-button" [disabled]="departmentForm.invalid">Update Department</button>
+        <button type="button" class="cancel-button" (click)="router.navigate(['/admin/department/list-department'])">Cancel</button>
+      </div>
+    </form>
+  </div>
+  

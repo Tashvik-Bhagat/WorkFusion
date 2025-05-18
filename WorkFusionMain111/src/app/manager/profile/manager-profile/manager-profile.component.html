@@ -1,0 +1,32 @@
+<div class="manager-profile" *ngIf="manager">
+    <div class="profile-card">
+      <!-- Profile Image Section -->
+      <div class="profile-image">
+        <img
+          *ngIf="manager.managerImage"
+          [src]="'data:image/jpg;base64,' + manager.managerImage"
+          alt="Manager Image"
+        />
+      </div>
+  
+      <!-- Manager Details Section -->
+      <div class="profile-details">
+        <h2>{{ manager.firstName }} {{ manager.lastName }}</h2>
+        <p><strong>Gender:</strong> {{ manager.gender }}</p>
+        <p><strong>Email:</strong> {{ manager.email }}</p>
+        <p><strong>Phone:</strong> {{ manager.phone }}</p>
+        <p><strong>Present Address:</strong> {{ manager.presentAddress }}</p>
+        <p><strong>Permanent Address:</strong> {{ manager.permanentAddress }}</p>
+        <p><strong>ID:</strong> {{ manager.idType }} - {{ manager.idNumber }}</p>
+        <p><strong>Date of Birth:</strong> {{ manager.dateOfBirth | date: 'longDate' }}</p>
+        <p><strong>Department ID:</strong> {{ manager.departmentId }}</p>
+        <p><strong>Hire Date:</strong> {{ manager.hireDate | date: 'longDate' }}</p>
+        <p><strong>Salary:</strong> {{ manager.salary | currency }}</p>
+        <p><strong>Status:</strong> {{ manager.isActive ? 'Active' : 'Inactive' }}</p>
+        
+        <!-- Redirect to Update Page -->
+        <button (click)="navigateToUpdatePage()">Update</button>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,98 @@
+/* Base styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .signup-container {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f4f8; /* Light background for a modern look */
+    margin-top: 60px; /* Adjust this value as needed */
+    background: linear-gradient(135deg, #ff6a3d, #b5bff6);
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+  
+  .signup-panel {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    
+    
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  select {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: border 0.3s;
+  }
+  
+  input:focus,
+  select:focus {
+    border-color: #007BFF; /* Bootstrap primary color */
+    outline: none;
+  }
+  
+  .error {
+    color: #d9534f; /* Bootstrap danger color */
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007BFF; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3; /* Darker shade of primary color */
+  }
+  
+  @media (max-width: 500px) {
+    .signup-panel {
+      padding: 15px;
+    }
+  
+    button {
+      font-size: 14px;
+    }
+  }
+
+  

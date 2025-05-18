@@ -1,0 +1,176 @@
+/* General Styles */
+body {
+    background-color: #f4f7fa; /* Light background for the page */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.employee-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin-top: 10px;
+    margin-left: 150px;
+    max-width: 800px; /* Limit max width for profile card */
+    width: 1000px;
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-header h1 {
+    color: #333; /* Darker text color for header */
+    font-size: 2.5rem; /* Larger font size */
+    margin: 0;
+}
+
+/* Profile Card */
+.profile-card {
+    background: #ffffff; /* White background for the card */
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s; /* Smooth hover effect */
+}
+
+.profile-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+/* Profile Image */
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0; /* Light grey background for the image area */
+    padding: 20px;
+}
+
+.profile-image img {
+    max-width: 100%;
+    max-height: 200px; /* Adjusted height for better proportion */
+    border-radius: 12px; /* Match card corners */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Profile Details */
+.profile-details {
+    flex: 2;
+    padding: 20px;
+}
+
+.profile-details h2 {
+    margin: 0 0 10px;
+    color: #2c3e50; /* Darker shade for name */
+    font-size: 1.8rem; /* Slightly larger font for name */
+}
+
+.profile-details p {
+    margin: 8px 0;
+    color: #34495e; /* Softer text color for details */
+    line-height: 1.6; /* Better line spacing */
+    font-size: 1rem; /* Standard font size */
+}
+
+strong {
+    color: #2980b9; /* Blue color for labels */
+}
+
+/*************************/
+/* Form Container */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between form fields */
+    width: 100%;
+    max-width: 600px; /* Limit form width for readability */
+    margin: 20px auto; /* Center align form */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background for form */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Label Styling */
+form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #333; /* Darker text for readability */
+    font-size: 1rem; /* Standard font size */
+}
+
+/* Input Fields */
+form input[type="text"],
+form input[type="date"],
+form input[type="email"],
+form input[type="file"] {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #2c3e50; /* Darker text for input */
+    background-color: #ffffff;
+    transition: border-color 0.3s ease;
+}
+
+/* Input Focus Styling */
+form input[type="text"]:focus,
+form input[type="date"]:focus,
+form input[type="email"]:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); /* Light shadow on focus */
+}
+
+/* Button Styles */
+button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Save Button */
+form button[type="submit"] {
+    background-color: #27ae60; /* Green background */
+    color: white;
+}
+
+form button[type="submit"]:hover {
+    background-color: #219150; /* Darker green on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="submit"]:active {
+    background-color: #1a7b42; /* Even darker green on active */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}
+
+/* Cancel Button */
+form button[type="button"] {
+    background-color: #e74c3c; /* Red background */
+    color: white;
+}
+
+form button[type="button"]:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="button"]:active {
+    background-color: #a83224; /* Even darker red on active */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transform: translateY(2px);
+}

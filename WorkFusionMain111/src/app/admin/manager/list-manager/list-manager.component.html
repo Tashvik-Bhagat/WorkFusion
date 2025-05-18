@@ -1,0 +1,84 @@
+<div class="manager-container">
+    <!-- Back Button with Font Awesome Icon -->
+    <button *ngIf="showDetails" class="back-button" (click)="showDetails = false">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+  
+    <h2 *ngIf="!showDetails">Manager List</h2>
+  
+    <!-- Search and Add Manager Buttons -->
+    <div *ngIf="!showDetails" class="manager-actions">
+      <div class="search-group">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          placeholder="Search by Full Name or Department"
+          class="search-input"
+        />
+        <button (click)="searchManager()"><i class="fas fa-search"></i> Search</button>
+        <button (click)="resetSearch()"><i class="fas fa-refresh"></i> Reset</button>
+      </div>
+    </div>
+  
+    <!-- Manager Table -->
+    <table *ngIf="!showDetails" class="manager-table">
+      <thead>
+        <tr>
+          <th>Profile Picture</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let manager of filteredManagers">
+          <td>
+            <img *ngIf="manager.managerImage" [src]="'data:image/jpg;base64,' + manager.managerImage" class="profile-pic" alt="Profile Picture">
+          </td>
+          <td>{{ manager.firstName }} {{ manager.lastName }}</td>
+          <td>{{ manager.email }}</td>
+          <td>{{ getDepartmentName(manager.departmentId) }}</td>
+          <td>
+            <button (click)="showMore(manager)"><i class="fas fa-info-circle"></i> View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Manager Details Card -->
+    <div *ngIf="showDetails && selectedManager" class="manager-card">
+      <div class="manager-card-content">
+        <!-- Left side with profile picture, name, ID, and department -->
+        <div class="left-section">
+            <img *ngIf="selectedManager.managerImage" [src]="'data:image/jpg;base64,' + selectedManager.managerImage" class="profile-pic-large" alt="Profile Picture">
+          <p><strong>{{ selectedManager.firstName }} {{ selectedManager.lastName }}</strong></p>
+          <p><i class="fa fa-envelope"></i> <strong>{{ selectedManager.email }}</strong></p>
+          <p><i class="fa fa-phone"></i> <strong>{{ selectedManager.phone }}</strong></p>
+        </div>
+  
+        <!-- Right side with detailed information -->
+        <div class="right-section">
+          <b>{{ getDepartmentName(selectedManager.departmentId) }}</b>
+          <p><strong>Manager ID:</strong> {{ selectedManager.managerId }}</p>
+          <p><strong>Hire Date:</strong> {{ selectedManager.hireDate | date:'yyyy-MM-dd' }}</p>
+          <p><strong>Current Salary:</strong> {{ selectedManager.salary | currency }}</p>
+          <p><strong>Gender:</strong> {{ selectedManager.gender }}</p>
+          <p><strong>User ID:</strong> {{ selectedManager.userId }}</p>
+          <p><strong>Present Address:</strong> {{ selectedManager.presentAddress }}</p>
+          <p><strong>Permanent Address:</strong> {{ selectedManager.permanentAddress }}</p>
+          <p><strong>Date Of Birth</strong> {{ selectedManager.dateOfBirth | date:'yyyy-MM-dd' }}</p>
+          <p><strong>ID Type:</strong> {{ selectedManager.idType }}</p>
+          <p><strong>ID Number:</strong> {{ selectedManager.idNumber }}</p>
+          <p><strong>Status:</strong> {{ selectedManager.isActive ? 'Active' : 'Inactive' }}</p>
+          <p><strong>Created At:</strong> {{ selectedManager.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+          <p><strong>Updated At:</strong> {{ selectedManager.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+        </div>
+      </div>
+      <!-- Update Button -->
+      <button class="update-button" (click)="goToUpdateManager(selectedManager.managerId)">
+        <i class="fas fa-edit"></i> Update
+      </button>
+    </div>
+  </div>
+  

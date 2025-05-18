@@ -1,0 +1,39 @@
+<div class="dashboard">
+    <h1 class="dashboard-title">Departments Project Status Overview</h1>
+  
+    <div class="main-container">
+      <div class="departments">
+        <div *ngFor="let department of departmentStatusData; let i = index" class="department-card">
+          <!-- Department Card (Left side) -->
+          <div class="department-info">
+            <h3><i class="icon-department"></i> {{ department.departmentName }}</h3>
+            <p><i class="icon-total"></i> Total Projects: {{ department.totalProjects }}</p>
+            <p><i class="icon-progress"></i> In Progress: {{ department.inProgressProjects }}</p>
+            <p><i class="icon-completed"></i> Completed: {{ department.completedProjects }}</p>
+            <p><i class="icon-hold"></i> On Hold: {{ department.onHoldProjects }}</p>
+          </div>
+  
+          <!-- Department Chart (Right side) -->
+          <div class="department-chart">
+            <jqxChart
+              *ngIf="getChartDataForDepartment(department.departmentName).length > 0"
+              [width]="500"
+              [height]="300"
+              [title]="department.departmentName + ' Project Status'"
+              [description]="'In Progress, Completed, On Hold'"
+              [showLegend]="true"
+              [showToolTips]="true"
+              [source]="getChartDataForDepartment(department.departmentName)"
+              [categoryAxis]="categoryAxis"
+              [colorScheme]="getDynamicColorScheme(i)"
+              [seriesGroups]="seriesGroups"
+            ></jqxChart>
+            <p *ngIf="getChartDataForDepartment(department.departmentName).length === 0">
+              No chart data available
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

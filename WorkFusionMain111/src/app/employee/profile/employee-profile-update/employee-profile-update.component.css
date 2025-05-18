@@ -1,0 +1,138 @@
+/* Ensure the button stays visible at the top left */
+.page-container {
+    position: relative;
+  }
+  
+  /* Fixed positioning for the back button with red styling */
+  .back-button {
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    color: #fff;
+    background-color: #ff4d4d; /* Red background color */
+    border: 2px solid #ff4d4d; /* Border to match background */
+    font-size: 18px;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1000; /* Ensures it stays on top of all other elements */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth transition for hover */
+  }
+  
+  /* Hover effect for a polished look */
+  .back-button:hover {
+    background-color: #ff3333; /* Darker red on hover */
+    border-color: #ff3333;
+  }
+  
+  /* Update employee container styling */
+  .update-employee-container {
+    max-width: 700px;
+    margin: 100px 200px 110px 200px;
+    padding: 20px;
+    padding-right: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fdfdfd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    color: #444;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Row Styling */
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group {
+    flex: 1;
+  }
+  
+  label {
+    font-weight: bold;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  /* Input Field Styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="date"],
+  input[type="file"],
+  select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="number"]:focus,
+  input[type="date"]:focus,
+  select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Readonly Field Styling */
+  .readonly-input {
+    background-color: #e9ecef;
+  }
+  
+  /* Radio Button Styling */
+  .radio-group {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    font-weight: normal;
+    margin-right: 440px;
+  }
+  
+  .radio-group input[type="radio"] {
+    margin-right: 5px;
+    accent-color: #007bff;
+  }
+  
+  /* Submit Button Styling */
+  .submit-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .submit-button:hover {
+    background-color: #0056b3;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .custom-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    z-index: 1000;
+  }
+  

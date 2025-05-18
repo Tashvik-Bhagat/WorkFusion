@@ -1,0 +1,193 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e5e5ff; /* Light purple background */
+    /* display: flex;
+    justify-content: center;
+    align-items: center;   */
+    min-height: 100vh; 
+    margin: 0;  /* Remove default margin */
+    padding: 0;  /* Remove default padding */
+  }
+  
+  /* Form container styles */
+  .update-form-container.container {
+    background-color: white;
+    max-width: 700px; /* Limit the maximum width of the form */
+    width: 90%; /* Set width relative to screen size for responsiveness */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    margin: 20px auto; /* Center the form horizontally */
+  }
+  
+  /* Heading styling */
+  h2 {
+    text-align: center;
+    color:black; /* Dark purple */
+    margin-bottom: 45px;
+    font-size: 30px;
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 20px;
+    gap: 20px 20px;
+  }
+  
+  .form-group.row {
+    display: flex;
+    gap: 60px; /* Space between fields */
+  }
+  
+  .form-group.row .form-control-container {
+    flex: 1; /* Take equal width */
+  }
+  
+  label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+  
+  /* Style readonly fields */
+  input[readonly],
+  textarea[readonly] {
+    background-color: #f5f5f5; /* Light gray background */
+    border-color: #ddd; /* Light border */
+    color: #888; /* Gray text color */
+    cursor: not-allowed;
+  }
+  
+  input:not([readonly]):focus,
+  textarea:not([readonly]):focus {
+    border-color: #6c63ff; /* Bright purple */
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ;
+  }
+  
+  .btn-primary:hover {
+    background  : linear-gradient(135deg, #00f2fe, #4facfe); /* Darker purple */
+  }
+  
+  .btn-save {
+    margin-top: 20px;
+  }
+  
+  .back-button-container {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .back-button {
+    background-color: #ec1919ee; /* Light purple for back button */
+    color:white;
+    font-size: 14px;
+    padding:  10px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; 
+    border: 2px white;
+    width: 69px;
+    position: fixed;
+  }
+  
+  .back-button i {
+    font-size: 18px;
+    margin-right: 4PX;
+  }
+  
+  .back-button:hover {
+    background-color: #670909; /* Hover effect */
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .form-group.row {
+      flex-direction: column; /* Stack fields vertically on smaller screens */
+    }
+    .custom-file-label {
+      display: inline-block;
+      background-color: #4CAF50; /* Green color */
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+    }
+    
+  }
+
+  .team-members-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .team-member {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #f5f5f5;
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  .employee-image {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  /* Button styling */
+.team-members-header .btn {
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.team-members-header .btn-danger {
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+}
+
+.team-members-header .btn-success {
+  background-color: green;
+  color: white;
+  border-radius: 10px;
+}

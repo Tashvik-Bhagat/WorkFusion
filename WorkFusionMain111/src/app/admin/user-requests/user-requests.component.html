@@ -1,0 +1,58 @@
+<div class="user-requests-container">
+  <h2>User Requests</h2>
+
+  <!-- Search and Filter Section -->
+  <div class="filter-container">
+    <input
+      type="number"
+      placeholder="Search by User ID"
+      [(ngModel)]="searchUserId"
+      class="search-input"
+    />
+    <button (click)="searchByUserId()" class="search-button">Search</button>
+    <button (click)="filterUsers(true)" class="filter-button">Active Users</button>
+    <button (click)="filterUsers(false)" class="filter-button">Inactive Users</button>
+    <button (click)="loadUsers()" class="filter-button reset-button">Reset</button>
+  </div>
+
+  <!-- User Table -->
+  <div class="table-wrapper">
+    <table class="user-table">
+      <thead>
+        <tr>
+          <th>User ID</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.userId }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td [class.active]="user.isActive" [class.inactive]="!user.isActive">
+            {{ user.isActive ? 'Active' : 'Inactive' }}
+          </td>
+          <td>
+            <button
+              *ngIf="!user.isActive"
+              (click)="toggleUserStatus(user.userId, true)"
+              class="activate-button"
+            >
+              Activate
+            </button>
+            <button
+              *ngIf="user.isActive"
+              (click)="toggleUserStatus(user.userId, false)"
+              class="deactivate-button"
+            >
+              Deactivate
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

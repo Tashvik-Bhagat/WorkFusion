@@ -1,0 +1,32 @@
+<div class="update-task-container">
+    <h2>Update Task Status</h2>
+    <form (ngSubmit)="onSubmit()" [formGroup]="updateTaskForm">
+      <div class="form-group">
+        <label for="status">Status</label>
+        <select id="status" formControlName="status">
+          <option value="Pending">Pending</option>
+          <option value="Completed">Completed</option>
+          <option value="Working On It">Working On It</option>
+        </select>
+        <div *ngIf="updateTaskForm.controls['status'].invalid && updateTaskForm.controls['status'].touched" class="error">
+          Status is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="startDate">Start Date</label>
+        <input type="date" id="startDate" formControlName="startDate" />
+        <div *ngIf="updateTaskForm.controls['startDate'].invalid && updateTaskForm.controls['startDate'].touched" class="error">
+          Start date is required.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="endDate">End Date</label>
+        <input type="date" id="endDate" formControlName="endDate" />
+      </div>
+  
+      <button type="submit" [disabled]="updateTaskForm.invalid" class="submit-btn">Update Task</button>
+    </form>
+  </div>
+  

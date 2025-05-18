@@ -1,0 +1,93 @@
+.approved-leaves-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1000px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+  
+  .approved-leaves-container h2 {
+    text-align: center;
+    color: #000; /* Darker heading color */
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700; /* Bold heading */
+  }
+  
+  .approved-leaves-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .approved-leaves-container table thead {
+    background-color: #f4f4f4;
+  }
+  
+  .approved-leaves-container table th,
+  .approved-leaves-container table td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+  }
+  
+  .approved-leaves-container table th {
+    font-size: 18px; /* Increased font size for table headers */
+    color: #333; /* Darker table heading text */
+    font-weight: 700; /* Bold table headings */
+  }
+  
+  .approved-leaves-container table td {
+    font-size: 16px; /* Increased font size for table data */
+    color: #222; /* Darker table data */
+    font-weight: 500; /* Slightly bold table data */
+  }
+  
+  .approved-leaves-container table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+  }
+  
+  .approved-leaves-container table tbody tr:nth-child(even) {
+    background-color: #fff;
+  }
+  
+  .approved-leaves-container table tbody tr:hover {
+    background-color: #e8f4f8;
+  }
+  
+  button {
+    background-color: #d9534f; /* Red for rejected theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    margin-bottom: 20px;
+  }
+  
+  button:hover {
+    background-color: #b30000; /* Darker blue on hover */
+  }
+  
+  button i {
+    font-size: 18px; /* Adjust icon size */
+  }
+  
+  @media (max-width: 768px) {
+    .approved-leaves-container table th,
+    .approved-leaves-container table td {
+      font-size: 14px; /* Adjusted font size for smaller screens */
+      padding: 8px;
+    }
+  
+    .approved-leaves-container h2 {
+      font-size: 20px;
+    }
+  }

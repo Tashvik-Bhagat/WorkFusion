@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7fc;
+}
+
+/* Task Container */
+.task-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden; /* Ensure the scroll is contained within the task container */
+}
+
+/* Header with Search Box and Add Task Button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+  position: sticky;
+  top: 0; /* Keep the header fixed at the top */
+  background-color: white;
+  z-index: 10; /* Make sure it stays above the task cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.search-box {
+  padding: 8px 16px;
+  width: 50%;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border 0.3s ease-in-out;
+}
+
+.search-box:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-task-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-task-btn:hover {
+  background-color: #0056b3;
+}
+
+.add-task-btn .material-icons {
+  margin-right: 8px;
+}
+
+/* Task Cards Section */
+.task-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+  max-height: calc(100vh - 140px); /* Adjust to make room for sticky header */
+  overflow-y: auto; /* Allow task cards to scroll */
+}
+
+.task-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.task-description {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.task-details p {
+  margin: 5px 0;
+  color: #777;
+}
+
+.task-details strong {
+  color: #333;
+}
+
+.task-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-btn:hover {
+  transform: scale(1.1);
+}
+
+.view-btn {
+  color: #007bff;
+}
+
+.edit-btn {
+  color: #28a745;
+}
+
+.delete-btn {
+  color: #dc3545;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task-container {
+    padding: 15px;
+  }
+
+  .search-box {
+    width: 70%;
+  }
+
+  .task-cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-box {
+    width: 100%;
+  }
+
+  .add-task-btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .task-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .icon-btn {
+    margin-top: 5px;
+  }
+}

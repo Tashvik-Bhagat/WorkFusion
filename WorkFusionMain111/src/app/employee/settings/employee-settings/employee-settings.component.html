@@ -1,0 +1,24 @@
+<div class="settings-container">
+    <h1>Employee Settings</h1>
+    <div class="button-group">
+      <button class="settings-button" (click)="navigateTo('employee/employee-profile')">
+        <i class="fas fa-user"></i> Profile
+      </button>
+      <button class="settings-button" (click)="navigateTo('employee/account')">
+        <i class="fas fa-cogs"></i> Account Settings
+      </button>
+      <button class="settings-button" (click)="navigateTo('employee/notifications')">
+        <i class="fas fa-bell"></i> Notifications
+      </button>
+      <button class="settings-button" (click)="navigateTo('employee/privacy')">
+        <i class="fas fa-lock"></i> Privacy
+      </button>
+      <button class="settings-button" (click)="navigateTo('employee/help')">
+        <i class="fas fa-question-circle"></i> Help
+      </button>
+      <button class="reset-button" (click)="resetPassword()">
+        <i class="fas fa-key"></i> Reset Password
+      </button>
+    </div>
+  </div>
+  

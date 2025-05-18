@@ -1,0 +1,90 @@
+/* view-task.component.css */
+.task-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 40px auto;
+    background: linear-gradient(145deg, #ffffff, #f3f3f3);
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    padding: 30px;
+    animation: slideIn 0.8s ease-in-out;
+  }
+  
+  .task-header {
+    text-align: center;
+    font-size: 2em;
+    color: #4a90e2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .task-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .task-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .task-field label {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+  }
+  
+  .task-field span {
+    font-size: 1em;
+    color: #666;
+    background: #f9f9f9;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .back-button {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 25px;
+    font-size: 1.1em;
+    color: white;
+    background: #4a90e2;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .back-button:hover {
+    background: #357abd;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.8em;
+    color: #777;
+    margin-top: 50px;
+  }
+  
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

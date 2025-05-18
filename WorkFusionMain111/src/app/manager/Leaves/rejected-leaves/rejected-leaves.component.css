@@ -1,0 +1,59 @@
+.rejected-leaves-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9; /* Light background color */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .rejected-leaves-container h2 {
+    text-align: center; /* Center align the heading */
+    font-size: 28px; /* Font size */
+    color: #d9534f; /* Red color for rejected theme */
+    margin-bottom: 20px;
+  }
+  
+  .rejected-leaves-container button {
+    background-color: #d9534f; /* Red for rejected theme */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+    margin-bottom: 20px;
+  }
+  
+  .rejected-leaves-container button:hover {
+    background-color: #c9302c; /* Darker red on hover */
+  }
+  
+  .rejected-leaves-container table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .rejected-leaves-container th,
+  .rejected-leaves-container td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .rejected-leaves-container th {
+    background-color: #f2f2f2; /* Light gray background for table headers */
+    font-weight: bold;
+  }
+  
+  .rejected-leaves-container tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .rejected-leaves-container tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+  }

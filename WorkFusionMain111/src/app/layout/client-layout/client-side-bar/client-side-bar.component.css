@@ -1,0 +1,89 @@
+.client-sidebar {
+  background-color: rgba(47, 79, 79, 0.942);
+  width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  color: #ecf0f1;
+}
+
+.admin-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.admin-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 5px;
+  margin-bottom: 10px;
+  object-fit: cover;
+}
+
+.admin-name {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  margin-top: 3px;
+}
+
+.client-sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.client-sidebar li {
+  margin: 15px 0;
+}
+
+.client-sidebar a {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  display: block;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.client-sidebar a:hover {
+  background-color: dimgrey;
+  color: aqua;
+}
+
+.client-sidebar i {
+  margin-right: 10px;
+  color: #ecf0f1;
+  font-size: 18px;
+  vertical-align: middle;
+}
+
+/* Submenu styles */
+.submenu {
+  list-style: none;
+  padding-left: 20px; /* Indent for submenu items */
+  margin: 10px 0 0;
+
+}
+
+.submenu li {
+  margin-left: 35px;
+}
+
+.submenu a {
+  font-size: 18px;
+  color: lightgray;
+}
+
+.submenu a:hover {
+  background-color: gray;
+  color: aqua;
+}

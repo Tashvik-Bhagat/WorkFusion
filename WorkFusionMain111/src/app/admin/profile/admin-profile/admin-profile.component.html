@@ -1,0 +1,44 @@
+<div class="admin-profile-container" *ngIf="adminData">
+  <h2 class="profile-title">Admin Profile</h2>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="loading">
+    Loading admin data...
+  </div>
+
+  <!-- Admin Details Card -->
+  <div *ngIf="!isLoading && adminData" class="profile-card">
+    <!-- Update Profile Button -->
+    <button class="update-button" (click)="navigateToUpdate()">Update Profile</button>
+
+    <!-- Profile Image Section -->
+    <div class="profile-image-section">
+      <img
+        *ngIf="adminData.adminImage"
+        [src]="'data:image/png;base64,' + adminData.adminImage"
+        alt="Admin Image"
+        class="profile-image"
+      />
+      <h3 class="profile-name">{{ adminData.firstName }} {{ adminData.lastName }}</h3>
+    </div>
+
+    <!-- Profile Information Section -->
+    <div class="profile-info-section">
+      <p><strong>Admin ID:</strong> {{ adminData.adminId }}</p>
+      <p><strong>Email:</strong> {{ adminData.email }}</p>
+      <p><strong>Gender:</strong> {{ adminData.gender }}</p>
+      <p><strong>Phone:</strong> {{ adminData.phone }}</p>
+      <p><strong>Present Address:</strong> {{ adminData.presentAddress }}</p>
+      <p><strong>Permanent Address:</strong> {{ adminData.permanentAddress }}</p>
+      <p><strong>ID Type:</strong> {{ adminData.idType }}</p>
+      <p><strong>ID Number:</strong> {{ adminData.idNumber }}</p>
+      <p><strong>Date of Birth:</strong> {{ adminData.dateOfBirth | date }}</p>
+      <p><strong>Status:</strong> {{ adminData.isActive ? 'Active' : 'Inactive' }}</p>
+    </div>
+  </div>
+
+  <!-- No Data Available -->
+  <div *ngIf="!isLoading && !adminData" class="no-data">
+    No admin data found.
+  </div>
+</div>

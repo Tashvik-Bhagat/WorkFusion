@@ -1,0 +1,102 @@
+/* General Styles */
+body {
+    background-color: #f4f7fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Profile Container */
+.client-profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    color: #2c3e50;
+    font-size: 1.2rem;
+    margin: 20px 0;
+}
+
+/* Profile Card */
+.profile-card {
+    display: flex;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Profile Image Section */
+.profile-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f0f0f0;
+    padding: 20px;
+}
+
+.profile-image img {
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Profile Details Section */
+.profile-details {
+    flex: 2;
+    padding: 20px;
+}
+
+.profile-details p {
+    margin: 8px 0;
+    color: #34495e;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+strong {
+    color: #2980b9;
+}
+
+/* No Data Message */
+.no-data {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+/* Update Button Container */
+.update-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Update Button */
+.update-button {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #1a6395;
+}

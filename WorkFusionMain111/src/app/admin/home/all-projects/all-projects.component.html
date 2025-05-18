@@ -1,0 +1,53 @@
+<div class="dashboard">
+    <h1 class="dashboard-title">Project Status Overview</h1>
+    
+    <!-- Main Container: Left side for project statuses, right side for chart -->
+    <div class="main-container">
+      
+      <!-- Stats Section: Displaying the project statuses on the left -->
+      <div class="stats">
+        <div class="row">
+          <div class="stat">
+            <i class="fa fa-project-diagram"></i>
+            <h3>Total Projects</h3>
+            <p>{{ totalProjects }}</p>
+          </div>
+          <div class="stat">
+            <i class="fa fa-spinner"></i>
+            <h3>In Progress</h3>
+            <p>{{ inProgressProjects }}</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="stat">
+            <i class="fa fa-check-circle"></i>
+            <h3>Completed</h3>
+            <p>{{ completedProjects }}</p>
+          </div>
+          <div class="stat">
+            <i class="fa fa-pause-circle"></i>
+            <h3>On Hold</h3>
+            <p>{{ onHoldProjects }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Chart Section: Column Graph for Project Statuses on the right -->
+      <div class="chart">
+        <jqxChart 
+          *ngIf="chartData.length > 0"
+          [width]="600"
+          [height]="300"
+          [title]="'Project Status Overview'"
+          [description]="'In Progress, Completed, On Hold'"
+          [showLegend]="true"
+          [showToolTips]="true"
+          [source]="chartData"
+          [categoryAxis]="categoryAxis"
+          [colorScheme]="'scheme03'"
+          [seriesGroups]="seriesGroups">
+        </jqxChart>
+      </div>
+    </div>
+  </div>
+  

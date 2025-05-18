@@ -1,0 +1,56 @@
+<div class="pending-leaves-container">
+    <h1>Leave requests</h1>
+  
+    <!-- Search Bar Section -->
+    <div class="search-bar-wrapper">
+      <input
+        type="text"
+        placeholder="Search by Project Title or Type"
+        [(ngModel)]="searchQuery"
+        (input)="applySearch()"
+      />
+      <button (click)="resetSearch()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
+    </div>
+  
+    <!-- Leave Buttons -->
+    <div class="leave-buttons">
+      <button (click)="navigateToApprovedLeaves()">
+        <i class="fas fa-check-circle"></i> Approved Leaves
+      </button>
+      <button (click)="navigateToRejectedLeaves()">
+        <i class="fas fa-times-circle"></i> Rejected Leaves
+      </button>
+    </div>
+  
+    <!-- No Leaves Message -->
+    <div *ngIf="filteredLeaves.length === 0">
+      <p>No pending leave requests matching the search criteria.</p>
+    </div>
+  
+    <!-- Leave Cards -->
+    <div class="pending-leave-cards">
+      <div class="leave-card" *ngFor="let leave of filteredLeaves">
+        <div class="card-header">
+          <h3>{{ leave.employeeName }}</h3>
+          <span>{{ leave.leaveType }}</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Reason:</strong> {{ leave.reason }}</p>
+          <p><strong>Status:</strong> {{ leave.status }}</p>
+          <p><strong>Start Date:</strong> {{ leave.startDate | date: 'MMMM dd yyyy' }}</p>
+          <p><strong>End Date:</strong> {{ leave.endDate | date: 'MMMM dd yyyy' }}</p>
+          <p><strong>Applied On:</strong> {{ leave.createdAt | date: 'MMMM dd yyyy' }}</p>
+        </div>
+        <div class="card-footer">
+          <button *ngIf="leave.id !== undefined" (click)="approveLeave(leave.id)">
+            Approve
+          </button>
+          <button *ngIf="leave.id !== undefined" (click)="rejectLeave(leave.id)">
+            Reject
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

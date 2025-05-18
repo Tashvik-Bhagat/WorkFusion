@@ -1,0 +1,43 @@
+<h1 style="text-align: center;">Manager Dashboard</h1>
+<div class="dashboard">
+    <!-- Stats Section: Left Side -->
+    <div class="stats">
+        <div class="stat">
+            <i class="fa fa-project-diagram"></i> <!-- Icon for Total Projects -->
+            <h3>Total Projects</h3>
+            <p>{{ totalProjects }}</p>
+        </div>
+        <div class="stat">
+            <i class="fa fa-spinner"></i> <!-- Icon for In Progress Projects -->
+            <h3>In Progress</h3>
+            <p>{{ inProgressProjects }}</p>
+        </div>
+        <div class="stat">
+            <i class="fa fa-check-circle"></i> <!-- Icon for Completed Projects -->
+            <h3>Completed</h3>
+            <p>{{ completedProjects }}</p>
+        </div>
+        <div class="stat">
+            <i class="fa fa-pause-circle"></i> <!-- Icon for On Hold Projects -->
+            <h3>On Hold</h3>
+            <p>{{ onHoldProjects }}</p>
+        </div>
+    </div>
+
+    <!-- Chart Section: Right Side -->
+    <div class="chart">
+        <jqxChart 
+            *ngIf="chartData.length > 0"
+            [width]="500"
+            [height]="300"
+            [title]="'Project Status'"
+            [description]="'In Progress, Completed, On Hold'"
+            [showLegend]="true"
+            [showToolTips]="true"
+            [source]="chartData"
+            [categoryAxis]="categoryAxis"
+            [colorScheme]="'scheme03'"
+            [seriesGroups]="seriesGroups">
+        </jqxChart>
+    </div>
+</div>

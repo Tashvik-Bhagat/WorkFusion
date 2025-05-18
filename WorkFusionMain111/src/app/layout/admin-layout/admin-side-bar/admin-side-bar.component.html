@@ -1,0 +1,143 @@
+<aside class="admin-sidebar">
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/admin/admin-home"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-home"></i> Home
+        </a>
+      </li>
+
+      <!-- Manager Menu -->
+      <li class="submenu">
+        <a
+          href="#"
+          [class.active]="managerMenuVisible"
+          (click)="toggleManagerMenu($event)"
+        >
+          <i class="fas fa-user-tie"></i> Manager
+        </a>
+        <ul class="submenu-items" *ngIf="managerMenuVisible">
+          <div class="right-side">
+            <li>
+              <a
+                (click)="navigateAndClose('admin/manager/add-manager')"
+              >
+                <i class="fas fa-plus-circle"></i> Add Manager
+              </a>
+            </li>
+            <li>
+              <a
+                (click)="navigateAndClose('admin/manager/list-manager')"
+              >
+                <i class="fas fa-list"></i> List Managers
+              </a>
+            </li>
+          </div>
+        </ul>
+      </li>
+
+      <!-- Client Menu -->
+      <li class="submenu">
+        <a
+          href="#"
+          [class.active]="clientMenuVisible"
+          (click)="toggleClientMenu($event)"
+        >
+          <i class="fas fa-users"></i> Client
+        </a>
+        <ul class="submenu-items" *ngIf="clientMenuVisible">
+          <div class="right-side">
+            <li>
+              <a
+                (click)="navigateAndClose('admin/client/add-client')"
+              >
+                <i class="fas fa-plus-circle"></i> Add Client
+              </a>
+            </li>
+            <li>
+              <a
+                (click)="navigateAndClose('admin/client/list-client')"
+              >
+                <i class="fas fa-list"></i> List Clients
+              </a>
+            </li>
+          </div>
+        </ul>
+      </li>
+
+      <!-- Employee Menu -->
+      <li class="submenu">
+        <a
+          href="#"
+          [class.active]="employeeMenuVisible"
+          (click)="toggleEmployeeMenu($event)"
+        >
+          <i class="fas fa-user"></i> Employee
+        </a>
+        <ul class="submenu-items" *ngIf="employeeMenuVisible">
+          <div class="right-side">
+            <li>
+              <a
+                (click)="navigateAndClose('admin/employee/add-employee')"
+              >
+                <i class="fas fa-plus-circle"></i> Add Employee
+              </a>
+            </li>
+            <li>
+              <a
+                (click)="navigateAndClose('admin/employee/list-employee')"
+              >
+                <i class="fas fa-list"></i> List Employees
+              </a>
+            </li>
+          </div>
+        </ul>
+      </li>
+
+      <!-- Other Links -->
+      <li>
+        <a
+          routerLink="/admin/show-all-projects"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-folder-open"></i> Projects
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/admin/user-requests"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-user-plus"></i> User Requests
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/admin/department/list-department"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-user-check"></i> Departments
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/admin/admin-welcome"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-comments"></i> Chat
+        </a>
+      </li>
+      <li>
+        <a
+          routerLink="/admin/settings"
+          routerLinkActive="active"
+        >
+          <i class="fas fa-cog"></i> Settings
+        </a>
+      </li>
+    </ul>
+  </nav>
+</aside>

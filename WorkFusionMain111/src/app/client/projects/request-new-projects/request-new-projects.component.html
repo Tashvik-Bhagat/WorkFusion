@@ -1,0 +1,117 @@
+<div class="form-container">
+  <h1>Create New Project Request</h1>
+  <form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Row 1: Project Title and Project Type -->
+    <div class="form-row">
+      <div class="half-width">
+        <label>Project Title</label>
+        <input type="text" formControlName="projectTitle" placeholder="Enter project title" />
+      </div>
+      <div class="half-width">
+        <label>Project Type</label>
+        <select formControlName="projectType">
+          <option value="" disabled selected>Select department</option>
+          <option *ngFor="let type of projectTypes" [value]="type">{{ type }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Row 2: Project Description -->
+    <div class="form-row">
+      <label>Project Description</label>
+      <textarea formControlName="projectDescription" placeholder="Enter project description" rows="4"></textarea>
+    </div>
+
+    <!-- Row 3: Objectives -->
+    <div class="form-row">
+      <label>Objectives</label>
+      <textarea formControlName="objectives" placeholder="Enter project objectives" rows="4"></textarea>
+    </div>
+
+    <!-- Row 4: Key Deliverables -->
+    <div class="form-row">
+      <label>Key Deliverables</label>
+      <textarea formControlName="keyDeliverables" placeholder="Enter key deliverables" rows="4"></textarea>
+    </div>
+
+    <!-- Row 5: Budget, Preferred Start Date, Deadline -->
+    <div class="form-row">
+      <div class="half-width">
+        <label>Budget</label>
+        <input type="number" formControlName="budget" placeholder="Enter budget" />
+      </div>
+      <div class="half-width">
+        <label>Preferred Start Date</label>
+        <input type="date" formControlName="preferredStartDate" />
+      </div>
+      <div class="half-width">
+        <label>Deadline</label>
+        <input type="date" formControlName="deadline" />
+      </div>
+    </div>
+
+    <!-- Row 6: Target Audience -->
+    <div class="form-row">
+      <label>Target Audience</label>
+      <textarea formControlName="targetAudience" placeholder="Describe target audience" rows="3"></textarea>
+    </div>
+
+    <!-- Row 7: Design Preferences -->
+    <div class="form-row">
+      <label>Design Preferences</label>
+      <textarea formControlName="designPreferences" placeholder="Mention design preferences" rows="3"></textarea>
+    </div>
+
+    <!-- Row 8: Functional Requirements and Technology Preferences -->
+    <div class="form-row">
+      <div class="half-width">
+        <label>Functional Requirements</label>
+        <textarea formControlName="functionalRequirements" placeholder="Mention functional requirements" rows="3"></textarea>
+      </div>
+      <div class="half-width">
+        <label>Technology Preferences</label>
+        <textarea formControlName="technologyPreferences" placeholder="Mention technology preferences" rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- Row 9: Challenges to Address -->
+    <div class="form-row">
+      <label>Challenges to Address</label>
+      <textarea formControlName="challengesToAddress" placeholder="Describe challenges" rows="3"></textarea>
+    </div>
+
+    <!-- Row 10: Competitor References -->
+    <div class="form-row">
+      <label>Competitor References</label>
+      <textarea formControlName="competitorReferences" placeholder="List competitor references" rows="3"></textarea>
+    </div>
+
+    <!-- Row 11: Special Instructions -->
+    <div class="form-row">
+      <label>Special Instructions</label>
+      <textarea formControlName="specialInstructions" placeholder="Any special instructions?" rows="4"></textarea>
+    </div>
+
+    <!-- Row 12: Attachments -->
+    <div class="form-row">
+      <label>Attachments</label>
+      <input type="file" (change)="handleFileUpload($event)" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg" />
+    </div>
+
+    <div class="attachments-preview">
+      <h3>Uploaded Files:</h3>
+      <ul>
+        <li *ngFor="let file of uploadedFiles">
+          {{ file.fileName }} - {{ file.fileType }}
+        </li>
+      </ul>
+    </div>
+
+    <!-- Submit and Cancel Buttons -->
+    <div class="form-actions">
+      <button type="submit" [disabled]="projectForm.invalid">Submit</button>
+      <button type="button" (click)="onCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

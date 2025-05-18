@@ -1,0 +1,43 @@
+<div class="add-department-container">
+    <div class="header">
+        <button class="back-button" routerLink="/admin/department/list-department">← Back</button>
+        <h2>Add New Department</h2>
+    </div>
+
+    <form [formGroup]="departmentForm" (ngSubmit)="onSubmit()">
+        <!-- Department Name -->
+        <div class="form-group">
+            <label for="departmentName">Department Name</label>
+            <input 
+                type="text" 
+                id="departmentName" 
+                formControlName="departmentName" 
+                [class.invalid]="departmentForm.get('departmentName')!.invalid && departmentForm.get('departmentName')!.touched" 
+                placeholder="Enter department name" 
+            />
+            <div *ngIf="departmentForm.get('departmentName')!.invalid && departmentForm.get('departmentName')!.touched" class="error-message">
+                Department name is required and should be at least 3 characters.
+            </div>
+        </div>
+
+        <!-- Description -->
+        <div class="form-group">
+            <label for="description">Description</label>
+            <textarea 
+                id="description" 
+                formControlName="description" 
+                [class.invalid]="departmentForm.get('description')!.invalid && departmentForm.get('description')!.touched" 
+                placeholder="Enter department description" 
+            ></textarea>
+            <div *ngIf="departmentForm.get('description')!.invalid && departmentForm.get('description')!.touched" class="error-message">
+                Description is required and should be at least 10 characters.
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="departmentForm.invalid || isSubmitting">
+            <span *ngIf="isSubmitting" class="spinner"></span>
+            {{ isSubmitting ? 'Submitting...' : 'Add Department' }}
+        </button>
+    </form>
+</div>

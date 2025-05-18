@@ -1,0 +1,20 @@
+/* General layout styling */
+.layout-container {
+    /* display: flex;  */
+    /* Use flexbox for sidebar and content layout */
+  }
+  
+  /* Content area adjustments */
+  .admin-content {
+    margin-top: 80px; /* Adjusted to new header height */
+    margin-left: 250px; /* Adjusted to sidebar width */
+    margin-bottom: 60px; /* Footer height */
+    padding: 20px; /* Padding for the content area */
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    height: calc(100vh - 140px); /* Adjusting height to fill the remaining space */
+    overflow-y: auto;
+  }
+  
+  
+  
+  

@@ -1,0 +1,20 @@
+.dashboard-container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+  }
+  
+  .content-area {
+    margin-left: 350px; /* Sidebar width */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    flex: 1; /* Take up the remaining space */
+    padding-top: 60px;
+    margin-bottom: 50px;
+  }
+  
+  .content-wrapper {
+    flex: 1; /* Take up remaining vertical space */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    padding: 20px;
+  
+  }

@@ -1,0 +1,52 @@
+<aside class="client-sidebar">
+  <div class="admin-profile">
+    <div class="admin-image-frame">
+      <img
+        [src]="userImage || 'assets/employee1.jpg'"
+        alt="User Image"
+        class="admin-image"
+      />
+    </div>
+    <h3 class="admin-name">{{ fullName }}</h3>
+  </div>
+  <ul>
+    <li>
+      <a routerLink="/client/home">
+        <i class="fa-solid fa-home"></i> Home
+      </a>
+    </li>
+    <li>
+      <a (click)="toggleProjectsSubmenu()">
+        <i class="fa-solid fa-briefcase"></i> Projects
+      </a>
+      <ul *ngIf="showProjectsSubmenu" class="submenu">
+        <li>
+          <a
+            routerLink="/client/request-projects"
+            (click)="closeProjectsSubmenu()"
+          >
+            <i class="fa-solid fa-file-signature"></i> Project Requests
+          </a>
+        </li>
+        <li>
+          <a
+            routerLink="/client/list-projects"
+            (click)="closeProjectsSubmenu()"
+          >
+            <i class="fa-solid fa-list"></i> List Projects
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a routerLink="/client/welcome">
+        <i class="fa-solid fa-comments"></i> Chat
+      </a>
+    </li>
+    <li>
+      <a routerLink="/client/client-settings">
+        <i class="fa-solid fa-cog"></i> Settings
+      </a>
+    </li>
+  </ul>
+</aside>

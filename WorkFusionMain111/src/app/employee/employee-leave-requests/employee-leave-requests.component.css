@@ -1,0 +1,203 @@
+.leave-dashboard {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .apply-leave-btn {
+    background-color: #5c67f2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 100px;
+  }
+  
+  .apply-leave-btn:hover {
+    background-color: #4a56d1;
+  }
+  
+  .leave-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    margin-top: 60px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .leave-card p {
+    margin: 5px 0;
+  }
+  
+  .leave-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .status-icon {
+    font-size: 1.5em; /* Ensure icon has a size */
+    color: inherit;
+  }
+  
+  .approved-icon {
+    color: #2d9c44; /* Green for approved */
+  }
+  
+  .pending-icon {
+    color: #c2d117; /* Yellow for pending */
+  }
+  
+  .rejected-icon {
+    color: #d9534f; /* Red for rejected */
+  }
+  
+  .status {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .status.approved {
+    color: #2d9c44;
+    background-color: #e5f6e9;
+  }
+  
+  .status.pending {
+    color: #d1a017;
+    background-color: #fff7e5;
+  }
+  
+  .status.rejected {
+    color: #d9534f;
+    background-color: #fce8e8;
+  }
+  
+  
+  
+  .actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .modify-btn {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .modify-btn:hover {
+    background-color: #5753d6;
+  }
+  
+  .cancel-btn {
+    background-color: #f8d7da;
+    color: #d9534f;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #f5c6cb;
+  }
+ /* Modal styling */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+ /* Modal container */
+.modal-content {
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  margin: 0 auto;
+}
+
+/* Close button */
+.close-btn {
+  float: right;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ff5e57;
+  transition: color 0.3s;
+}
+.close-btn:hover{
+  color:  #ff1e1e;
+}
+
+/* Form headings */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Labels */
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input fields and dropdown */
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+/* Textarea specific */
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+/* Buttons */
+button.submit-btn {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+button.submit-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+button.submit-btn:hover:not(:disabled) {
+  background-color: #45a049;
+}

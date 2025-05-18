@@ -1,0 +1,18 @@
+<header class="employee-header">
+  <div class="logo">
+    <img src="assets/final-logo.jpg" alt="Company Logo" /> <!-- Replace with your company logo -->
+  </div>
+  <nav class="header-nav">
+    <a routerLink="employeeprofile" routerLinkActive="active">
+      <i class="fas fa-user"></i> 
+    </a>
+    <a  routerLink="employee-notification" routerLinkActive="active"  (click)="getUnreadCount()">
+      <i class="fas fa-bell"></i>
+        <!-- Badge only shows when unreadCount > 0 -->
+        <span class="notification-badge" *ngIf="unreadCount > 0">{{ unreadCount }}</span>
+    </a>
+    <button class="logout-button" (click)="logout()">
+      <i class="fas fa-sign-out-alt"></i> 
+    </button>
+  </nav>
+</header>

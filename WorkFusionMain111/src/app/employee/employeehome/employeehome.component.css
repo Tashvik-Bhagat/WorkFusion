@@ -1,0 +1,106 @@
+/* General Dashboard Styling */
+.dashboard {
+  font-family: 'Arial', sans-serif;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+/* Dashboard Title */
+h1 {
+  font-size: 2.2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Stats Section */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+
+/* Individual Stat Box */
+.stat {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+}
+
+.stat:hover {
+  transform: translateY(-10px);
+}
+
+.stat h3 {
+  font-size: 1.2em;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.stat p {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.stat i {
+  font-size: 2.5em;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Specific Icons Colors */
+.stat .fa-tasks {
+  color: #8e44ad; /* Purple for Total Tasks */
+}
+
+.stat .fa-hourglass-half {
+  color: #e67e22; /* Orange for Pending Tasks */
+}
+
+.stat .fa-spinner {
+  color: #f39c12; /* Yellow for Working On It */
+}
+
+.stat .fa-check-circle {
+  color: #27ae60; /* Green for Completed Tasks */
+}
+
+/* Chart Section */
+.chart {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .chart {
+    margin-top: 30px;
+  }
+}

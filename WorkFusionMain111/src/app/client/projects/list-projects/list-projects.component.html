@@ -1,0 +1,104 @@
+<div class="projects-container">
+    <!-- Projects List View -->
+    <div *ngIf="!isDetailsView">
+      <h2>Projects List</h2>
+  
+      <!-- Search Bar -->
+      <div class="search-bar-container">
+        <input
+          type="text"
+          [(ngModel)]="searchQuery"
+          placeholder="Search projects by name or status..."
+          class="search-input"
+        />
+        <button class="btn search-btn" (click)="searchProjects()"><i class="fas fa-search"></i> Search</button>
+        <button class="btn reset-btn" (click)="resetSearch()"><i class="fas fa-undo"></i> Reset</button>
+      </div>
+  
+      <!-- Projects Table -->
+      <table class="projects-table">
+        <thead>
+          <tr>
+            <th>Project Name</th>
+            <th>Manager Name</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let project of filteredProjects">
+            <td>{{ project.projectName }}</td>
+            <td>{{ project.managerFirstName }} {{ project.managerLastName }}</td>
+            <td>{{ project.status }}</td>
+            <td>
+              <button class="btn view-btn" (click)="toggleDetails(project)">
+                <i class="fas fa-eye"></i> View More
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Project Details View -->
+    <div *ngIf="isDetailsView">
+      <button class="btn close-btn" (click)="backToList()"><i class="fas fa-arrow-left"></i>Back</button>
+      <div class="project-details-card">
+        <h2>Project Details</h2>
+        <table class="projects-details-table">
+          <tbody>
+            <tr>
+              <th>Project Name:</th>
+              <td>{{ selectedProject.projectName }}</td>
+            </tr>
+            <tr>
+              <th>Description:</th>
+              <td>{{ selectedProject.description }}</td>
+            </tr>
+            <tr>
+              <th>Manager Name:</th>
+              <td>{{ selectedProject.managerFirstName }} {{ selectedProject.managerLastName }}</td>
+            </tr>
+            <tr>
+              <th>Start Date:</th>
+              <td>{{ selectedProject.startDate | date }}</td>
+            </tr>
+            <tr>
+              <th>End Date:</th>
+              <td>{{ selectedProject.endDate | date }}</td>
+            </tr>
+            <tr>
+              <th>Actual Cost:</th>
+              <td>{{ selectedProject.actualCost }}</td>
+            </tr>
+            <tr>
+              <th>Budget:</th>
+              <td>{{ selectedProject.budget }}</td>
+            </tr>
+            <tr>
+              <th>Status:</th>
+              <td>{{ selectedProject.status }}</td>
+            </tr>
+          <!-- 
+             <tr *ngIf="selectedProject.attachments">
+            <th>Attachments:</th>
+            <td>
+              <button class="btn view-primary" (click)="viewAttachment()">
+                <i class="fas fa-file-pdf"></i> View Attachment
+              </button>
+              <button class="btn download-btn" (click)="downloadAttachment()">
+                <i class="fas fa-download"></i> Download Attachment
+              </button>
+            </td>
+          </tr> -->
+            
+            <tr>
+              <th>Team Members:</th>
+              <td>{{ selectedProject.teamMemberNames}}</td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

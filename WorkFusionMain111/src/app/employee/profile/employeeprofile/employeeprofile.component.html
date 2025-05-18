@@ -1,0 +1,31 @@
+<div class="employee-profile" *ngIf="employee">
+  <div class="profile-card">
+    <!-- Profile Image Section -->
+    <div class="profile-image">
+      <img
+        *ngIf="employee.employeeImage"
+        [src]="'data:image/jpg;base64,' + employee.employeeImage"
+        alt="Employee Image"
+      />
+    </div>
+
+    <!-- Employee Details Section -->
+    <div class="profile-details">
+      <h2>{{ employee.firstName }} {{ employee.lastName }}</h2>
+      <p><strong>Gender:</strong> {{ employee.gender }}</p>
+      <p><strong>Email:</strong> {{ employee.email }}</p>
+      <p><strong>Phone:</strong> {{ employee.phone }}</p>
+      <p><strong>Present Address:</strong> {{ employee.presentAddress }}</p>
+      <p><strong>Permanent Address:</strong> {{ employee.permanentAddress }}</p>
+      <p><strong>ID:</strong> {{ employee.idType }} - {{ employee.idNumber }}</p>
+      <p><strong>Date of Birth:</strong> {{ employee.dateOfBirth | date: 'longDate' }}</p>
+      <p><strong>Department ID:</strong> {{ employee.departmentId }}</p>
+      <p><strong>Hire Date:</strong> {{ employee.hireDate | date: 'longDate' }}</p>
+      <p><strong>Current Salary:</strong> {{ employee.currentSalary | currency }}</p>
+      <p><strong>Status:</strong> {{ employee.isActive ? 'Active' : 'Inactive' }}</p>
+      
+      <!-- Redirect to Update Page -->
+      <button (click)="navigateToUpdatePage()">Update</button>
+    </div>
+  </div>
+</div>

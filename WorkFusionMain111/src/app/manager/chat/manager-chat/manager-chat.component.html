@@ -1,0 +1,41 @@
+<div class="chat-container">
+    <div class="chat-header">
+      <h3>Welcome to <span class="highlight">{{roomName}}</span> Group</h3>
+      <button (click)="leaveChat()" class="leave-btn">Leave Chat</button>
+    </div>
+    <div class="messaging">
+      <div class="inbox">
+        <div class="inbox-header">
+          <h4>Connected Users</h4>
+        </div>
+        <div class="user-list">
+          <ng-container *ngFor="let user of this.chatService.connectedUsers$ | async">
+            <div class="user-item">
+              <img src="https://ptetutorials.com/images/user-profile.png" alt="user profile">
+              <p>{{user}} <span class="online-indicator"></span></p>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+      <div class="chat-area">
+        <div #scrollMe class="message-history">
+          <ng-container *ngFor="let message of this.chatService.messages$ | async">
+            <div class="message-container" [ngClass]="{'incoming': message.user != loggedInUserName, 'outgoing': message.user === loggedInUserName}">
+              <div class="message">
+                <img *ngIf="message.user != loggedInUserName" src="https://ptetutorials.com/images/user-profile.png" alt="user">
+                <div>
+                  <p>{{message.message}}</p>
+                  <span>{{message.user}} | {{message.messageTime | date: 'medium'}}</span>
+                </div>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+        <div class="message-input">
+          <input [(ngModel)]="inputMessage" (keydown.enter)="sendMessage()" placeholder="Type a message">
+          <button (click)="sendMessage()"><i class="fa fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

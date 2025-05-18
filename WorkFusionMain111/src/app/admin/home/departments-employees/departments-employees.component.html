@@ -1,0 +1,30 @@
+<div class="chart-container">
+    <h2>Active Employees by Department</h2>
+  
+    <!-- Column Chart -->
+    <jqxChart
+      [width]="'100%'"
+      [height]="400"
+      [source]="chartData"
+      [title]="'Departments vs. Active Employees (Column Chart)'"
+      [description]="'Number of Active Employees in each Department (Column)'"
+      [showLegend]="true"
+      [padding]="{ left: 10, top: 10, right: 10, bottom: 10 }"
+      [categoryAxis]="categoryAxis"
+      [seriesGroups]="seriesGroups.slice(0, 1)">
+    </jqxChart>
+  
+    <!-- Pie Chart -->
+    <jqxChart
+      [width]="'100%'"
+      [height]="400"
+      [source]="chartData"
+      [title]="'Departments vs. Active Employees (Pie Chart)'"
+      [description]="'Number of Active Employees in each Department (Pie)'"
+      [showLegend]="true"
+      [padding]="{ left: 10, top: 10, right: 10, bottom: 10 }"
+      [categoryAxis]="categoryAxis"
+      [seriesGroups]="seriesGroups.slice(1, 2)">
+    </jqxChart>
+  </div>
+  

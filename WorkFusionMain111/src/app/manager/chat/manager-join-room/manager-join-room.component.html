@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="wrapper">
+      <h2 class="heading">Welcome to ChatHUB</h2>
+      <p class="sub-heading">Please Join the Room to start Chatting</p>
+      <div class="card">
+        <form [formGroup]="joinRoomForm" class="form">
+          <div class="image-container">
+            <img
+              src="https://cdn.pixabay.com/photo/2023/07/24/23/30/chat-8147986_1280.jpg"
+              alt="profile"
+              class="profile-image"
+            />
+          </div>
+  
+          <div class="input-group">
+            <input
+              formControlName="user"
+              type="text"
+              class="input-field"
+              id="displayname"
+              placeholder="Display Name"
+              [disabled]="true"
+            />
+          </div>
+  
+          <div class="input-group">
+            <input
+              formControlName="room"
+              type="text"
+              class="input-field"
+              id="roomname"
+              placeholder="Room Name"
+            />
+          </div>
+  
+          <div class="button-container">
+            <button
+              [disabled]="joinRoomForm.invalid"
+              (click)="joinRoom()"
+              type="submit"
+              class="submit-button"
+            >
+              Join
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

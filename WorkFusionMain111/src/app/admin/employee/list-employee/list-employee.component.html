@@ -1,0 +1,84 @@
+<div class="employee-container">
+  <!-- Back Button with Font Awesome Icon -->
+  <button *ngIf="showDetails" class="back-button" (click)="showDetails = false">
+    <i class="fas fa-arrow-left"></i> Back
+  </button>
+
+  <h2 *ngIf="!showDetails">Employee List</h2>
+
+  <!-- Search and Add Employee Buttons -->
+  <div *ngIf="!showDetails" class="employee-actions">
+    <div class="search-group">
+      <input
+        type="text"
+        [(ngModel)]="searchText"
+        placeholder="Search by Full Name or Department"
+        class="search-input"
+      />
+      <button (click)="searchEmployee()"><i class="fas fa-search"></i> Search</button>
+      <button (click)="resetSearch()"><i class="fas fa-refresh"></i> Reset</button>
+    </div>
+  </div>
+
+  <!-- Employee Table with Scrollable Content -->
+  <div class="table-container" *ngIf="!showDetails">
+    <table class="employee-table">
+      <thead>
+        <tr>
+          <th>Profile Picture</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Department</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of filteredEmployees">
+          <td>
+            <img [src]="'data:image/jpg;base64,' + employee.employeeImage" class="profile-pic" alt="Profile Picture">
+          </td>
+          <td>{{ employee.firstName }} {{ employee.lastName }}</td>
+          <td>{{ employee.email }}</td>
+          <td>{{ getDepartmentName(employee.departmentId) }}</td>
+          <td>
+            <button (click)="showMore(employee)"><i class="fas fa-info-circle"></i> View</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Employee Details Card -->
+  <div *ngIf="showDetails" class="employee-card">
+    <div class="employee-card-content">
+      <!-- Left side with profile picture, name, ID, and department -->
+      <div class="left-section">
+        <img [src]="'data:image/jpg;base64,' + selectedEmployee.employeeImage" class="profile-pic-large" alt="Profile Picture">
+        <p><strong>{{ selectedEmployee.firstName }} {{ selectedEmployee.lastName }}</strong></p>
+        <p><i class="fas fa-envelope"></i> <strong></strong> {{ selectedEmployee.email }}</p>
+        <p><i class="fas fa-phone"></i> <strong></strong> {{ selectedEmployee.phone }}</p>
+      </div>
+
+      <!-- Right side with detailed information -->
+      <div class="right-section">
+        <p style="font-size: 20px; color:navy;"><b>{{ getDepartmentName(selectedEmployee.departmentId) }}</b></p>
+        <p><strong>Employee ID:</strong> {{ selectedEmployee.employeeId }}</p>
+        <p><strong>Hire Date:</strong> {{ selectedEmployee.hireDate | date:'yyyy-MM-dd' }}</p>
+        <p><strong>Current Salary:</strong> {{ selectedEmployee.currentSalary | currency }}</p>
+        <p><strong>Gender:</strong> {{ selectedEmployee.gender }}</p>
+        <p><strong>User ID:</strong> {{ selectedEmployee.userId }}</p>
+        <p><strong>Present Address:</strong> {{ selectedEmployee.presentAddress }}</p>
+        <p><strong>Permanent Address:</strong> {{ selectedEmployee.permanentAddress }}</p>
+        <p><strong>ID Type:</strong> {{ selectedEmployee.idType }}</p>
+        <p><strong>ID Number:</strong> {{ selectedEmployee.idNumber }}</p>
+        <p><strong>Status:</strong> {{ selectedEmployee.isActive ? 'Active' : 'Inactive' }}</p>
+        <p><strong>Created At:</strong> {{ selectedEmployee.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+        <p><strong>Updated At:</strong> {{ selectedEmployee.updatedAt | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+      </div>
+    </div>
+    <!-- Update Button -->
+    <button class="update-button" (click)="goToUpdateEmployee(selectedEmployee.employeeId)">
+      <i class="fas fa-edit"></i> Update
+    </button>
+  </div>
+</div>

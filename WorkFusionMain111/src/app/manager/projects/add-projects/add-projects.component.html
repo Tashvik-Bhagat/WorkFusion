@@ -1,0 +1,188 @@
+<div class="back-button-container">
+    <button class="back-button" (click)="goBack()"><i class="fas fa-arrow-left"></i> Back</button>
+  </div>
+  
+  <div class="update-form-container container">
+    <h2>Create New Project</h2>
+    <form [formGroup]="addProjectForm" (ngSubmit)="onSubmit()">
+      <!-- Row 1: Project ID and Client ID -->
+      <div class="form-group row">
+        <div class="form-control-container">
+          <label for="clientId">Client ID</label>
+          <input type="text" id="clientId" class="form-control" formControlName="clientId" readonly />
+        </div>
+        <div class="form-control-container">
+          <label for="managerId">Manager ID</label>
+          <input type="text" id="managerId" class="form-control" formControlName="managerId" readonly />
+        </div>
+      </div>
+  
+      <div class="form-group row">
+        <div class="form-control-container">
+          <label for="projectName">Project Name</label>
+          <input
+            type="text"
+            id="projectName"
+            class="form-control"
+            formControlName="projectName"
+            placeholder="Enter Project Name"
+          />
+        </div>
+      </div>
+  
+       <!-- Row 3: Description (Full Row) -->
+       <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          class="form-control"
+          formControlName="description"
+          placeholder="Enter Description"
+        ></textarea>
+      </div>
+  
+       <!-- Row 5: Start Date and End Date -->
+       <div class="form-group row">
+        <div class="form-control-container">
+          <label for="startDate">Start Date</label>
+          <input
+          type="date"
+            id="startDate"
+            class="form-control"
+            formControlName="startDate"
+            
+          />
+        </div>
+        <div class="form-control-container">
+          <label for="endDate">End Date</label>
+          <input
+          type="date"
+            id="endDate"
+            class="form-control"
+            formControlName="endDate"
+         
+          />
+        </div>
+      </div>
+  
+       <!-- Row 6: Budget and Status -->
+       <div class="form-group row">
+        <div class="form-control-container">
+          <label for="budget">Budget</label>
+          <input
+            type="number"
+            id="budget"
+            class="form-control"
+            formControlName="budget"
+            placeholder="Enter Budget"
+          />
+        </div>
+        <div class="form-control-container">
+          <label for="status">Status</label>
+          <select id="status" class="form-control" formControlName="status">
+            <option value="OnHold">On-Hold</option>
+            <option value="InProgress">In Progress</option>
+            <option value="Completed">Completed</option>
+          </select>
+        </div>
+      </div>
+      <!-- Row 7: Deadline and Actual Cost -->
+      <div class="form-group row">
+        <div class="form-control-container">
+          <label for="deadline">Deadline</label>
+          <input
+            type="date"
+            id="deadline"
+            class="form-control"
+            formControlName="deadline"
+          />
+        </div>
+        <div class="form-control-container">
+          <label for="actualCost">Actual Cost</label>
+          <input
+            type="number"
+            id="actualCost"
+            class="form-control"
+            formControlName="actualCost"
+            placeholder="Enter Actual Cost"
+          />
+        </div>
+      </div>
+  
+  
+<!-- Row 6: Team Members -->
+<div class="form-group">
+  <div class="team-members-header"><b>Team Members  </b>
+    <button 
+      type="button" 
+      class="btn" 
+      [ngClass]="{'btn-danger': !teamMembersVisible, 'btn-success': teamMembersVisible}" 
+      (click)="toggleTeamMembers()">
+      {{ teamMembersVisible ? 'Hide Team Members' : 'Show Employees' }}
+    </button>
+    <label for="teamMembers"></label>
+  </div>
+
+  <div *ngIf="teamMembersVisible" id="teamMembers" class="team-members-container">
+    <div *ngFor="let member of teamMembers" class="team-member">
+      <input
+        type="checkbox"
+        [id]="'member_' + member.id"
+        [value]="member.id"
+        (change)="onTeamMemberSelectionChange($event)"
+      />
+      <label [for]="'member_' + member.id">
+        <img
+          *ngIf="member.employeeImage"
+          [src]="member.employeeImage"
+          alt="{{ member.fullName }}"
+          class="employee-image"
+        />
+        <span> {{ member.fullName }}</span>
+      </label>
+    </div>
+  </div>
+</div>
+
+            
+  
+  
+      <div class="form-control-container">
+        <label for="milestones">Milestones</label>
+        <textarea
+          id="milestones"
+          class="form-control"
+          formControlName="milestones"
+          placeholder="Enter Milestones"
+        ></textarea>
+      </div>
+  
+      
+  
+       <!-- Row 9: Attachments and Is Active -->
+       <div class="form-group row">
+        <div class="form-control-container">
+          <label for="attachments" class="custom-file-label">Attachments</label>
+          <input
+            type="file"
+            id="attachments"
+            class="form-control"
+            (change)="onFileSelect($event)"
+          />
+        </div>
+        <div class="form-control-container">
+          <label for="isActive">Is Active</label>
+          <select id="isActive" class="form-control" formControlName="isActive">
+            <option [ngValue]="true">Active</option>
+            <option [ngValue]="false">Inactive</option>
+          </select>
+        </div>
+      </div>
+    
+      <button type="submit" class="btn btn-primary"   [disabled]="addProjectForm.invalid">
+        Add Project
+      </button>
+      
+      
+    </form>
+  </div> 

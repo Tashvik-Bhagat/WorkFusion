@@ -1,0 +1,142 @@
+<div class="update-task-container">
+    <h2 class="title">Update Task</h2>
+    <form #updateTaskForm="ngForm" (ngSubmit)="onSubmit()">
+      <!-- Task Name -->
+      <div class="form-group">
+        <label for="taskName">Task Name</label>
+        <input
+          type="text"
+          id="taskName"
+          name="taskName"
+          [(ngModel)]="task.taskName"
+          class="form-control"
+          required
+        />
+      </div>
+  
+      <!-- Description -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          [(ngModel)]="task.description"
+          class="form-control"
+          rows="3"
+          required
+        ></textarea>
+      </div>
+  
+      <!-- Project Name and Assigned To -->
+      <div class="form-group row">
+        <div class="col-6">
+          <label for="projectId">Project Name</label>
+          <div class="custom-dropdown">
+            <select
+              id="projectId"
+              name="projectId"
+              [(ngModel)]="task.projectId"
+              class="form-control"
+              required
+            >
+              <option *ngFor="let project of projects" [value]="project.projectId">
+                {{ project.projectName }}
+              </option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="col-6">
+          <label for="assignedTo">Assigned To</label>
+          <div class="custom-dropdown">
+            <button class="dropdown-toggle" type="button" (click)="toggleDropdown()">
+              <span *ngIf="selectedEmployee">
+                <img [src]="'data:image/jpg;base64,' + selectedEmployee.employeeImage" alt="Employee" class="dropdown-img" />
+                {{ selectedEmployee.firstName }} {{ selectedEmployee.lastName }}
+              </span>
+              <span *ngIf="!selectedEmployee">Select an employee</span>
+            </button>
+            <div *ngIf="dropdownOpen" class="dropdown-preview">
+              <div
+                *ngFor="let employee of employees"
+                (click)="selectEmployee(employee)"
+                class="dropdown-item"
+              >
+                <img [src]="'data:image/jpg;base64,' + employee.employeeImage" alt="Employee" class="dropdown-img" />
+                <span>{{ employee.firstName }} {{ employee.lastName }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Priority, Status, and Due Date -->
+      <div class="form-group row">
+          <div class="col-6">
+          <label for="priority">Priority</label>
+          <select
+            id="priority"
+            name="priority"
+            [(ngModel)]="task.priority"
+            class="form-control"
+            required
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+  
+        <div class="col-6">
+          <label for="status">Status</label>
+          <select
+            id="status"
+            name="status"
+            [(ngModel)]="task.status"
+            class="form-control"
+            required
+          >
+            <option value="pending">Pending</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+  </div>
+  
+  <div class="form-group row">
+
+    <div class="col-6">
+      <label for="startDate">StartDate</label>
+      <input
+        type="date"
+        id="startDate"
+        name="startDate"
+        [(ngModel)]="task.startDate"
+        class="form-control"
+        required
+      />
+    </div>
+    <div class="col-6">
+      <label for="dueDate">Due Date</label>
+      <input
+        type="date"
+        id="dueDate"
+        name="dueDate"
+        [(ngModel)]="task.dueDate"
+        class="form-control"
+        required
+      />
+    </div>
+  </div>
+
+  
+      <!-- Submit Button -->
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Update Task</button>
+        <button type="button" class="btn btn-secondary" routerLink="/manager/list-all-tasks">
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+  

@@ -1,0 +1,42 @@
+/* Footer styling */
+.admin-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Footer background color */
+    color: #fff; /* Footer text color */
+    padding: 10px; /* Padding inside the footer */
+    font-size: 0.9em; /* Font size for footer */
+    z-index: 1000; /* Ensure the footer is on top */
+    box-sizing: border-box; /* Ensures padding doesn’t affect height */
+  }
+  
+  .footer-content {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    font-size: 15px;
+  }
+  
+  .footer-links {
+    display: flex; /* Use flexbox for links */
+    gap: 15px; /* Space between links */
+  }
+  
+  .footer-links a {
+    color: #fff; /* Link color */
+    text-decoration: none; /* Remove underline */
+  }
+  
+  .footer-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color:aqua;
+    
+  }
+  
+  
+  
+  
+  
+  

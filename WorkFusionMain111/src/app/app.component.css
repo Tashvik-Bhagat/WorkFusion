@@ -1,0 +1,71 @@
+/* Custom styles for ngx-toastr */
+
+/* Base toaster styles */
+.toast {
+    border-radius: 10px; /* Rounded corners */
+    font-family: 'Arial', sans-serif; /* Custom font */
+    opacity: 0.9; /* Slightly transparent background */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    position: fixed; /* Fixed position */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position for centering */
+    z-index: 9999; /* Ensure it's on top of other content */
+}
+
+/* Success notification */
+.toast-success {
+    background-color: #28a745 !important; /* Green background for success */
+    color: white !important; /* White text */
+}
+
+/* Error notification */
+.toast-error {
+    background-color: #dc3545 !important; /* Red background for errors */
+    color: white !important; /* White text */
+}
+
+/* Warning notification */
+.toast-warning {
+    background-color: #ffc107 !important; /* Yellow background for warnings */
+    color: black !important; /* Black text */
+}
+
+/* Info notification */
+.toast-info {
+    background-color: #17a2b8 !important; /* Cyan background for info */
+    color: white !important; /* White text */
+}
+
+/* Center vertically in the middle of the page */
+.toast {
+    top: 50%; /* Position from the top */
+    transform: translate(-50%, -50%); /* Adjust position for vertical centering */
+}
+
+/* Close button styling */
+.toast .toast-close-button {
+    color: white; /* Color for close button */
+}
+
+/* Message text styling */
+.toast .toast-message {
+    font-size: 16px; /* Font size of the message */
+    line-height: 1.5; /* Line height */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .toast {
+        font-size: 14px; /* Smaller font size on smaller screens */
+        padding: 10px; /* Adjust padding */
+    }
+}
+
+ngx-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+  }
+  

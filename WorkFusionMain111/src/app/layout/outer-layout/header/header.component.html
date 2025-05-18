@@ -1,0 +1,28 @@
+<nav class="navbar" id="navbar">
+  <div class="nav-logo">
+    <a><img src="assets/final-logo.jpg" alt="Logo" /></a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/outer-about">About Us</a></li>
+    <li><a routerLink="/services">Our Services</a></li>
+    <li><a routerLink="/outer-contact">Contact Us</a></li>
+  </ul>
+
+  <div class="nav-search">
+    <input type="text" placeholder="Search..." />
+    <button>Search</button>
+  </div>
+
+  <div class="nav-auth">
+    <button class="btn btn-login" (click)="toggleDropdown()">Login</button>
+    <ul class="dropdown-menu" *ngIf="dropdownVisible">
+      <li><a routerLink="/admin-login" (click)="closeDropdown()">Admin Login</a></li>
+      <li><a routerLink="/manager-login" (click)="closeDropdown()">Manager Login</a></li>
+      <li><a routerLink="/employee-login" (click)="closeDropdown()">Employee Login</a></li>
+      <li><a routerLink="/client-login" (click)="closeDropdown()">Client Login</a></li>
+    </ul>
+    <button routerLink="/signup-form" class="btn btn-signup">Signup</button>
+  </div>
+</nav>

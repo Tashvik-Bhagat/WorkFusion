@@ -1,0 +1,205 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7fc;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Search Bar */
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 8px 12px;
+    font-size: 14px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    width: 250px;
+  }
+  
+  .search-bar button {
+    padding: 8px 15px;
+    background-color: #f0ad4e;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .search-bar button i {
+    margin-right: 5px;
+  }
+  
+  /* Project Table */
+  .project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .project-table th,
+  .project-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .project-table th {
+    background-color: #f8f9fa;
+  }
+  
+  .project-table td {
+    color: #555;
+  }
+  
+  .project-table .view-btn {
+    padding: 5px 10px;
+    background-color: #0275d8;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .project-table .view-btn i {
+    margin-right: 5px;
+  }
+  
+  /* Card View */
+  .card-view {
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+  }
+  
+  .card-content h2 {
+    text-align: center;
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 25px;
+    margin-top: 5px;
+  }
+  
+  .details-table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .details-table th,
+  .details-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+
+  }
+  
+  .details-table th {
+    font-weight: bold;
+  }
+  
+  .details-table td {
+    color: #555;
+  }
+  
+  /* Card Actions */
+  .card-actions {
+    text-align: center;
+  }
+  
+  .card-actions button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .Add-btn {
+    background-color: #5bc0de;
+    color: white;
+    border: none;
+  }
+  
+  .Add-btn:hover {
+    background-color: #31b0d5;
+  }
+  
+  .close-btn {
+    background-color: rgba(169, 169, 169, 0.992);
+    color: white;
+    border: none;
+  }
+  
+  .close-btn:hover {
+    background-color: grey;
+  }
+  
+  /* Attachments */
+  .details-table ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .details-table li {
+    margin-bottom: 10px;
+  }
+  
+  .details-table button {
+    padding: 5px 10px;
+    background-color: #5bc0de;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .details-table button i {
+    margin-right: 5px;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 95%;
+    }
+  
+    .search-bar input {
+      width: 180px;
+    }
+  
+    .project-table th, .project-table td {
+      font-size: 12px;
+    }
+  
+    .card-content h2 {
+      font-size: 22px;
+    }
+  }
+  

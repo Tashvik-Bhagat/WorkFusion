@@ -1,0 +1,42 @@
+<div class="client-profile-container" *ngIf="clientData">
+  <h2>Client Profile</h2>
+
+  <div *ngIf="isLoading" class="loading-spinner">
+    Loading client data...
+  </div>
+
+  <div *ngIf="!isLoading && clientData" class="profile-card">
+    <!-- Profile Image Section -->
+    <div class="profile-image">
+      <img 
+        *ngIf="clientData.clientImage" 
+        [src]="'data:image/jpg;base64,' + clientData.clientImage" 
+        alt="Client Image" 
+      />
+    </div>
+
+    <!-- Client Details Section -->
+    <div class="profile-details">
+      <p><strong>Client ID:</strong> {{ clientData.clientId }}</p>
+      <p><strong>Full Name:</strong> {{ clientData.firstName }} {{ clientData.lastName }}</p>
+      <p><strong>Gender:</strong> {{ clientData.gender }}</p>
+      <p><strong>Email:</strong> {{ clientData.email }}</p>
+      <p><strong>Phone:</strong> {{ clientData.phone }}</p>
+      <p><strong>Present Address:</strong> {{ clientData.presentAddress }}</p>
+      <p><strong>Permanent Address:</strong> {{ clientData.permanentAddress }}</p>
+      <p><strong>ID Type:</strong> {{ clientData.idType }}</p>
+      <p><strong>ID Number:</strong> {{ clientData.idNumber }}</p>
+      <p><strong>Date of Birth:</strong> {{ clientData.dateOfBirth | date }}</p>
+      <p><strong>User ID:</strong> {{ clientData.userId }}</p>
+       <!-- Update Button -->
+  <div class="update-button-container">
+    <button class="update-button" (click)="navigateToUpdatePage()">Update</button>
+  </div>
+
+    </div>
+  </div>
+
+  <div *ngIf="!isLoading && !clientData" class="no-data">
+    No client data available.
+  </div>
+</div>

@@ -1,0 +1,117 @@
+/* General button styling remains unchanged */
+.icon-btn {
+  background-color: #333;
+  color: #ccc;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+/* Hover effect */
+.icon-btn:hover {
+  color: #fff;
+  border-color: #555;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* Active (clicked) effect */
+.active-btn {
+  background-color: #444;
+  color: #fff;
+  border-color: #777;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Logout button styling */
+.logout-btn {
+  color: #f44336; /* Distinctive red icon */
+}
+
+.logout-btn:hover {
+  color: #ff5a5a; /* Lighter red on hover */
+  border-color: #f44336;
+}
+
+/* Profile button styling */
+.profile-btn {
+  color: #4caf50; /* Green icon */
+}
+
+.profile-btn:hover {
+  color: #66bb6a; /* Lighter green on hover */
+  border-color: #4caf50;
+}
+
+/* Notification button styling */
+.notification-btn {
+  color: #2196f3; /* Blue icon */
+}
+
+.notification-btn:hover {
+  color: #64b5f6; /* Lighter blue on hover */
+  border-color: #2196f3;
+}
+
+/* Header styling remains unchanged */
+.admin-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  z-index: 1000;
+  font-size: 1.2em;
+  height: 80px;
+  box-sizing: border-box;
+}
+
+.header-center {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  width: 200px;
+  height: 60px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+/* Admin profile styling */
+.admin-profile {
+  display: flex;
+  align-items: center;
+}
+
+.admin-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.admin-name {
+  margin-left: 10px;
+}

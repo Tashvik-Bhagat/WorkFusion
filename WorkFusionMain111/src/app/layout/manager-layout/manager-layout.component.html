@@ -1,0 +1,27 @@
+<div class="manager-layout">
+    <!-- Static Sidebar on the left -->
+    <aside class="manager-sidebar">
+      <app-manager-side-bar></app-manager-side-bar>
+    </aside>
+  
+    <!-- Right Side with Header, Main Content (Router Outlet), and Footer -->
+    <div class="manager-content-area">
+      <!-- Static Header -->
+      <header class="manager-header">
+        <!-- In your AppComponent or parent component template -->
+            <app-manager-header></app-manager-header>
+      </header>
+  
+      <!-- Main Content Area with Router Outlet -->
+      <main class="manager-main-content">
+        <router-outlet></router-outlet>
+      </main>
+  
+      <!-- Static Footer -->
+      <footer class="manager-footer">
+        <app-manager-footer></app-manager-footer>
+      </footer>
+    </div>
+  </div>
+ 
+ 

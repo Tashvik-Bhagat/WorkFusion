@@ -1,0 +1,151 @@
+/* General reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Sidebar */
+  .employee-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+  
+  /* Header */
+  .employee-header {
+    position: fixed;
+    top: 0;
+    left: 250px; /* Offset to the right of the sidebar */
+    width: calc(100% - 250px); /* Header spans remaining width */
+    height: 70px; /* Fixed height for header */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 0 20px;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 900; /* Behind sidebar */
+  }
+  
+  /* Logo style */
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3498db;
+    text-align: center;
+  }
+  
+  .logo img {
+    width: 200px; /* Adjust size as needed */
+    height: 70px; /* Maintain aspect ratio */
+  }
+  
+  /* Navigation links */
+  .header-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between nav items */
+  }
+  
+  .header-nav a {
+    color: #ecf0f1;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex; /* Use flex to align items */
+    align-items: center; /* Center items vertically */
+  }
+  
+  .header-nav a i {
+    font-size: 18px; /* Icon size */
+    margin-right: 5px; /* Space between icon and text */
+  }
+  
+  .header-nav a:hover {
+    background-color: #3498db;
+    color: #ffffff;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .employee-sidebar {
+      width: 100%;
+      height: auto;
+      position: static;
+      box-shadow: none;
+    }
+  
+    .employee-header {
+      left: 0;
+      width: 100%;
+      padding: 10px;
+    }
+  
+    .logo {
+      font-size: 18px;
+    }
+  
+    .header-nav a {
+      font-size: 14px;
+      padding: 6px 8px;
+    }
+  
+    .header-nav a i {
+      font-size: 16px; /* Adjust icon size for smaller screens */
+    }
+  }
+  /* Logout Button */
+.logout-button {
+  background: none;
+  border: none;
+  color: #ecf0f1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.logout-button i {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.logout-button:hover {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+/* Ensure the bell icon has relative positioning to anchor the badge */
+.manager-header .header-nav a {
+  position: relative; /* This allows the badge to be placed relative to the bell icon */
+}
+
+/* Active link styling */
+.employee-header a.active {
+  background-color: #1abc9c; /* Highlight color for active link */
+  color: #ffffff; /* White text for active link */
+  font-weight: bold; /* Bold for active link */
+}
+
+/* Hover effect for links */
+.employee-header a:hover {
+  background-color: #16a085; /* Darker background on hover */
+  color: #ffffff; /* White text on hover */
+}

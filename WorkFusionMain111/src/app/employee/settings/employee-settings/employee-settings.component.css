@@ -1,0 +1,63 @@
+/* General Settings Container */
+.settings-container {
+    width: 80%;
+    margin: 30px auto;
+    text-align: center;
+  }
+  
+  /* Title Styling */
+  .settings-container h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Button Group Styling */
+  .button-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+  }
+  
+  /* Common Button Styling */
+  .settings-button,
+  .reset-button {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .settings-button:hover,
+  .reset-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+  }
+  
+  /* Icon Styling */
+  .settings-button i,
+  .reset-button i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+  }
+  
+  /* Reset Button Specific Styling */
+  .reset-button {
+    background-color: #f44336; /* Red color */
+  }
+  
+  .reset-button:hover {
+    background-color: #e53935;
+  }
+  
+  

@@ -1,0 +1,177 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding-top: 80px; /* Space for fixed header */
+  margin-left: 0; /* Ensure no left margin */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1a2238; /* Dark blue background */
+  padding: 15px 30px;
+  position: fixed;
+  width: 100vw; /* Change to 100vw to ensure it covers the full viewport width */
+  left: 0; /* Ensure it starts from the extreme left */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar.hide {
+  transform: translateY(-100%);
+}
+
+.navbar.show {
+  transform: translateY(0);
+}
+
+.nav-logo img {
+  height: 70px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f4db7d; /* Light yellow for link text */
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff6a3d ;
+  font-size: 18px;
+}
+
+.nav-search {
+  display: flex;
+  align-items: center;
+}
+
+.nav-search input {
+  padding: 10px;
+  border: 2px solid #ff6a3d; /* Orange border for input */
+  border-radius: 25px;
+  margin-right: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.nav-search input:focus {
+  border-color: #9daaf2; /* Light blue border on focus */
+  outline: none;
+}
+
+.nav-search button {
+  padding: 10px 15px;
+  background-color: #ff6a3d; /* Orange background for search button */
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-search button:hover {
+  background-color: #e5582e; /* Darker orange on hover */
+}
+
+.nav-auth {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increase space between Login and Signup buttons */
+}
+
+.btn {
+  color: #fdf9f9;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-login {
+  background-color: #ff6a3d; /* Set Login button to orange */
+}
+
+.btn-login:hover {
+  color: #ff6a3d;
+  background-color: white; /* Darker orange on hover */
+  border-color: #ff6a3d;
+  border: 2px solid;
+}
+
+.btn-signup {
+  background-color: #9daaf2; /* Set Signup button to light blue */
+  margin-left: 10px; /* Additional margin for space between buttons */
+}
+
+.btn-signup:hover {
+  color: #9daaf2;
+  background-color: white; /* Darker orange on hover */
+  border-color: #9daaf2;
+  border: 2px solid;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 10px); /* Position it directly below the navbar with a gap */
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: #ff6a3d; 
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-auth {
+    flex-direction: column;
+  }
+
+  .nav-auth .btn-signup {
+    margin-top: 10px;
+  }
+}

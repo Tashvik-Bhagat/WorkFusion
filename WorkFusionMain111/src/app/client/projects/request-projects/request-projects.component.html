@@ -1,0 +1,151 @@
+<div class="container">
+  <h1 *ngIf="!selectedProject">Your Project Requests</h1>
+
+  <!-- Search and Buttons Section -->
+  <div class="actions" *ngIf="!selectedProject">
+    <div class="search-bar">
+      <input
+        type="text"
+        placeholder="Search by Project Title or Type"
+        [(ngModel)]="searchQuery"
+        (input)="applySearch()"
+      />
+      <button class="reset-btn" (click)="resetSearch()">
+        <i class="fas fa-undo"></i> Reset
+      </button>
+    </div>
+    <button class="request-btn" (click)="navigateToNewRequest()">
+      <i class="fas fa-plus-circle"></i> Request New Project
+    </button>
+  </div>
+
+  <!-- Show table only when no card is open -->
+  <div *ngIf="!selectedProject">
+    <table class="project-table">
+      <thead>
+        <tr>
+          <th>Project Title</th>
+          <th>Project Type</th>
+          <th>Budget</th>
+          <th>Deadline</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of filteredProjects">
+          <td>{{ project.projectTitle }}</td>
+          <td>{{ project.projectType }}</td>
+          <td>{{ project.budget | currency }}</td>
+          <td>{{ project.deadline | date }}</td>
+          <td>{{ project.isActive ? 'Accepted' : 'Waiting' }}</td>
+          <td>
+            <button class="view-btn" (click)="toggleCardView(project)">
+              <i class="fas fa-eye"></i> View More
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Card View -->
+  <div *ngIf="selectedProject" class="card-view">
+    <div class="card-content">
+      <h2>{{ selectedProject.projectTitle }}</h2>
+      <table class="details-table">
+        <tbody>
+          <tr>
+            <th>Project Type:</th>
+            <td>{{ selectedProject.projectType }}</td>
+          </tr>
+          <tr>
+            <th>Objectives:</th>
+            <td>{{ selectedProject.objectives }}</td>
+          </tr>
+          <tr>
+            <th>Key Deliverables:</th>
+            <td>{{ selectedProject.keyDeliverables }}</td>
+          </tr>
+          <tr>
+            <th>Budget:</th>
+            <td>{{ selectedProject.budget | currency }}</td>
+          </tr>
+          <tr>
+            <th>Preferred Start Date:</th>
+            <td>{{ selectedProject.preferredStartDate | date }}</td>
+          </tr>
+          <tr>
+            <th>Deadline:</th>
+            <td>{{ selectedProject.deadline | date }}</td>
+          </tr>
+          <tr>
+            <th>Status:</th>
+            <td>{{ selectedProject.isActive ? 'Accepted' : 'Waiting' }}</td>
+          </tr>
+          <tr>
+            <th>Description:</th>
+            <td>{{ selectedProject.projectDescription }}</td>
+          </tr>
+          <tr>
+            <th>Target Audience:</th>
+            <td>{{ selectedProject.targetAudience }}</td>
+          </tr>
+          <tr>
+            <th>Design Preferences:</th>
+            <td>{{ selectedProject.designPreferences }}</td>
+          </tr>
+          <tr>
+            <th>Functional Requirements:</th>
+            <td>{{ selectedProject.functionalRequirements }}</td>
+          </tr>
+          <tr>
+            <th>Technology Preferences:</th>
+            <td>{{ selectedProject.technologyPreferences }}</td>
+          </tr>
+          <tr>
+            <th>Challenges To Address:</th>
+            <td>{{ selectedProject.challengesToAddress }}</td>
+          </tr>
+          <tr>
+            <th>Competitor References:</th>
+            <td>{{ selectedProject.competitorReferences }}</td>
+          </tr>
+          <tr>
+            <th>Special Instructions:</th>
+            <td>{{ selectedProject.specialInstructions }}</td>
+          </tr>
+          <tr>
+            <th>Manager Notes:</th>
+            <td>{{ selectedProject.managerNotes }}</td>
+          </tr>
+
+          <tr *ngIf="selectedProject.attachments && selectedProject.attachments.length > 0">
+            <th>Attachments:</th>
+            <td>
+              <ul>
+                <li *ngFor="let attachment of selectedProject.attachments.split(',')">
+                  <button (click)="viewAttachment(attachment)">
+                    <i class="fas fa-file-pdf"></i> View Attachment
+                  </button>
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="card-actions">
+        <button class="update-btn" (click)="navigateToUpdate(selectedProject.projectRequestID)">
+          <i class="fas fa-edit"></i> Update
+        </button>
+        <button class="delete-btn" (click)="deleteProject(selectedProject.projectRequestID)">
+          <i class="fas fa-trash"></i> Delete
+        </button>
+        <button class="close-btn" (click)="closeCardView()">
+          <i class="fas fa-times"></i> Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

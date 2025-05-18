@@ -1,0 +1,39 @@
+.client-footer {
+  position: fixed;
+  bottom: 0;
+  left: 290px; /* Adjusted for the sidebar width */
+  background-color: darkslategray;
+  color: white;
+  width: calc(100% - 290px); /* Adjusted for sidebar width */
+  padding: 5px 20px; /* Reduced padding for smaller height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px; /* Uniform font size */
+  z-index: 1000;
+  height: 40px; /* Small height */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.rights {
+  margin: 0;
+}
+
+.footer-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* No underline */
+  margin-left: 15px; /* Space between links */
+  font-size: 14px; /* Same font size as the rights text */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+  color: yellow;
+}

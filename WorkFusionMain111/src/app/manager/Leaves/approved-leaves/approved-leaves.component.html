@@ -1,0 +1,31 @@
+<div class="approved-leaves-container">
+   
+    <button (click)="navigateToPendingLeaves()"><i class="fas fa-arrow-left"></i></button>
+    <h2>Approved Leaves</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Employee Name</th>
+          <th>Leave Type</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Reason</th>
+          <th>Status</th>
+          <th>Decision Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let leave of approvedLeaves">
+          <td>{{ leave.id }}</td>
+          <td>{{ leave.employeeName }}</td>
+          <td>{{ leave.leaveType }}</td>
+          <td>{{ leave.startDate | date }}</td>
+          <td>{{ leave.endDate | date }}</td>
+          <td>{{ leave.reason }}</td>
+          <td>{{leave.status}}</td>
+          <td>{{ leave.decisionDate | date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

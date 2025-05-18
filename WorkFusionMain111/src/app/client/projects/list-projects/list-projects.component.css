@@ -1,0 +1,194 @@
+/* Main container styling */
+.projects-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 75%;
+    margin: 20px auto;
+    /* position: relative; */
+  }
+  
+  /* Heading */
+  .projects-container h2 {
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    
+  }
+  
+  /* Search bar container */
+  .search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-left: 30px;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
+    justify-content: flex-start; /* Aligns everything to the left */
+  }
+  
+  /* Search input */
+  .search-input {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  /* Buttons */
+  .search-btn,
+  .reset-btn {
+    background-color: #f39c12;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+
+
+  /* Hover Effect */
+.search-btn:hover,
+.reset-btn:hover {
+  background-color: #d35400; /* Darker orange on hover */
+  color: #fff; /* Ensure text remains visible */
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Add subtle shadow */
+}
+  
+  .search-btn i,
+  .reset-btn i {
+    margin-right: 5px;
+  }
+  
+  /*projects list Table styling */
+  .projects-table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .projects-table thead {
+    background-color: #f2f2f2;
+  }
+
+  .project-details-card{
+    width: 95%;
+  }
+  
+  .projects-table th,
+  .projects-table td {
+    text-align: left;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd; /* Only horizontal lines */
+  }
+  
+  .projects-table th {
+    font-weight: bold;
+    
+  }
+  
+  .projects-table tbody tr:hover {
+    background-color: lavender;
+  }
+
+.projects-table td {
+  border-right: none; /* Remove vertical lines */
+}
+
+/* project detils table styling*/
+  .projects-details-table th,
+.projects-details-table td {
+
+    text-align: left;
+    padding: 10px 15px; /* Adds space between heading and data */
+    border-bottom: 1px solid #ddd;
+}
+
+.projects-details-table th {
+    font-weight: bold;
+}
+
+.projects-details-table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+ 
+  /* Action  view button styling */
+  .view-btn {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 7px 14px;
+    border-radius: 5px;
+    font-size: 12px;
+    cursor: pointer;
+  }
+  .view-btn:hover{
+    background-color: #16a085;
+  }
+  
+  .view-btn i {
+    margin-right: 5px;
+  }
+
+  /* Download button styling */
+  .download-btn {
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+    }
+  .download-btn:hover {
+    background-color:skyblue;
+  }
+
+  /* Back button styling */
+  .close-btn{
+    display: inline-block;
+    padding: 8px 15px;
+    background-color:rgba(255, 0, 0, 0.912);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    margin-left: 19%;
+    margin-top: 5%;
+  }
+  .close-btn:hover{
+    background-color: darkred;
+  }
+  .close-btn i{
+    margin-right: 5px;
+  }
+  /* Attachment view button styling */
+  .view-primary{
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  .view-primary:hover{
+    background-color: skyblue;
+  }

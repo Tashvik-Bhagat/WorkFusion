@@ -1,0 +1,151 @@
+.container {
+    width: 90%;
+    margin: auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  .actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-bar input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 10px;
+  }
+  
+  .reset-btn {
+    padding: 8px 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reset-btn:hover {
+    background-color: #5a6268;
+  }
+  
+  .request-btn {
+    padding: 8px 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .request-btn:hover {
+    background-color: #218838;
+  }
+  
+  .project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .project-table th,
+  .project-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .project-table th {
+    background-color: #f4f4f4;
+  }
+  
+  .view-btn {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .card-view {
+    margin-top: 20px;
+    margin-bottom: 100px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .details-table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+  }
+  
+  .details-table th,
+  .details-table td {
+    padding: 10px;
+    text-align: left;
+  }
+  
+  .details-table th {
+    width: 30%;
+    background-color: #f4f4f4;
+  }
+  
+  .details-table td {
+    width: 70%;
+  }
+  
+  .card-actions {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .update-btn,
+  .delete-btn,
+  .close-btn {
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .update-btn {
+    background-color: #17a2b8;
+  }
+  
+  .update-btn:hover {
+    background-color: #117a8b;
+  }
+  
+  .delete-btn {
+    background-color: #dc3545;
+  }
+  
+  .delete-btn:hover {
+    background-color: #a71d2a;
+  }
+  
+  .close-btn {
+    background-color: #6c757d;
+  }
+  
+  .close-btn:hover {
+    background-color: #5a6268;
+  }
+  

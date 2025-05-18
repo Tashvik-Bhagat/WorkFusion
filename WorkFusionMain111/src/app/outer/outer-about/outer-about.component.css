@@ -1,0 +1,118 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    color: #1a2238; /* Dark text for readability */
+    background-color: #FEF9F2; /* Warm off-white background */
+}
+
+/* About Us Container */
+.about-us-container {
+    background: linear-gradient(135deg, #FFE3E3, #FEF9F2);
+    color: #1a2238;
+    padding: 20px;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #789DBC; /* Blue-gray background */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-top: 80px;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #FEF9F2; /* Light text */
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    color: #FEF9F2; /* Light text */
+}
+
+/* Section Styling */
+.mission-section,
+.vision-section,
+.values-section,
+.team-section,
+.contact-section {
+    margin: 40px 0;
+    padding: 20px;
+    background-color: #FFE3E3; /* Soft pink background */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #1a2238;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    color: #1a2238;
+}
+
+/* Values Section */
+.values-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.values-section li {
+    padding: 10px 0;
+    border-bottom: 1px solid #789DBC; /* Border matches theme */
+    color: #1a2238;
+}
+
+/* Team Section */
+.team-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: #FEF9F2; /* Off-white for team cards */
+    border-radius: 8px;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    width: 250px;
+    color: #1a2238;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.team-member img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #789DBC; /* Blue-gray */
+    color: #FEF9F2; /* Light text */
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FFE3E3; /* Soft pink */
+    color: #1a2238;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

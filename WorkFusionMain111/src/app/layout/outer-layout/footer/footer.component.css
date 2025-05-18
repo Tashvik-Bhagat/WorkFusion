@@ -1,0 +1,112 @@
+.footer {
+  background-color: #1a2238; /* Darker background for the footer */
+  color: #f4db7d; /* Light yellow text for contrast */
+  padding: 40px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 220px;
+  margin: 10px;
+}
+
+.footer-column h4 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #ff6a3d; /* Orange color for headings */
+}
+
+.footer-column p,
+.footer-column ul,
+.footer-column li {
+  color: #9daaf2; /* Light blue for text and list items */
+  margin: 5px 0;
+  font-size: 1rem;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li a {
+  color: #9daaf2; /* Light blue for links */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+  color: #f4db7d; /* Light yellow on hover */
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px;
+}
+
+.social-icons a {
+  color: #f4db7d; /* Light yellow for social media icons */
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff6a3d; /* Orange on hover */
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid #9daaf2; /* Light blue border on top */
+  margin-top: 20px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #9daaf2; /* Light blue for footer bottom text */
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column; /* Stack items vertically */
+  gap: 10px; /* Space between icons */
+}
+
+.social-icons a {
+  color: #f4db7d; /* Default color for social media icons */
+  font-size: 1.5rem; /* Size of the icons */
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #ff6a3d; /* Orange on hover */
+}
+
+/* Specific colors for each social media icon */
+.social-icons a.facebook {
+  color: #3b5998; /* Facebook color */
+}
+
+.social-icons a.twitter {
+  color: #1da1f2; /* Twitter color */
+}
+
+.social-icons a.instagram {
+  color: #c13584; /* Instagram color */
+}
+

@@ -1,0 +1,121 @@
+<h1 class="title">Projects Management</h1>
+<div class="container">
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input
+        type="text"
+        class="search-input"
+        [(ngModel)]="searchQuery"
+        (input)="filterProjects()"
+        placeholder="Search by Project Name"
+      />
+    </div>
+  
+    <!-- Projects Table -->
+    <table
+      class="projects-table animated-table"
+      *ngIf="filteredProjects.length > 0 && !selectedProject; else noData"
+    >
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Manager</th>
+          <th>Client</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of filteredProjects">
+          <td>{{ project.projectName }}</td>
+          <td>{{ project.managerFirstName }} {{ project.managerLastName }}</td>
+          <td>{{ project.clientFirstName }} {{ project.clientLastName }}</td>
+          <td>{{ project.startDate | date: 'shortDate' }}</td>
+          <td>{{ project.endDate | date: 'shortDate' }}</td>
+          <td>
+            <button
+              class="btn-view-more"
+              (click)="viewProjectDetails(project)"
+            >
+              <i class="fas fa-eye"></i> View More
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- No Data Template -->
+    <ng-template #noData>
+      <p class="no-data-message">No projects available at the moment.</p>
+    </ng-template>
+  
+    <!-- Project Details Modal -->
+    <div class="project-details-modal animated-modal" *ngIf="selectedProject">
+      <div class="modal-content">
+        <button class="close-button" (click)="closeDetails()">
+          <i class="fas fa-times"></i>
+        </button>
+        <h2>Project Details</h2>
+        <div class="details-grid">
+          <div>
+            <p><strong>Project Name:</strong></p>
+            <p>{{ selectedProject.projectName }}</p>
+          </div>
+          <div>
+            <p><strong>Description:</strong></p>
+            <p>{{ selectedProject.description }}</p>
+          </div>
+          <div>
+            <p><strong>Start Date:</strong></p>
+            <p>{{ selectedProject.startDate | date}}</p>
+          </div>
+          <div>
+            <p><strong>End Date:</strong></p>
+            <p>{{ selectedProject.endDate | date }}</p>
+          </div>
+          <div>
+            <p><strong>Budget:</strong></p>
+            <p>${{ selectedProject.budget }}</p>
+          </div>
+          <div>
+            <p><strong>Status:</strong></p>
+            <p>{{ selectedProject.status }}</p>
+          </div>
+          <div>
+            <p><strong>Client:</strong></p>
+            <p>{{ selectedProject.clientFirstName }} {{ selectedProject.clientLastName }}</p>
+          </div>
+          <div>
+            <p><strong>Manager:</strong></p>
+            <p>{{ selectedProject.managerFirstName }} {{ selectedProject.managerLastName }}</p>
+          </div>
+          <div>
+            <p><strong>Deadline:</strong></p>
+            <p>{{ selectedProject.deadline | date: 'shortDate' }}</p>
+          </div>
+          <div>
+            <p><strong>Actual Cost:</strong></p>
+            <p>${{ selectedProject.actualCost }}</p>
+          </div>
+          <div>
+            <p><strong>Attachments:</strong></p>
+            <p><a [href]="selectedProject.attachments" target="_blank">Download</a></p>
+          </div>
+          <div>
+            <p><strong>Milestones:</strong></p>
+            <p>{{ selectedProject.milestones }}</p>
+          </div>
+          <div>
+            <p><strong>Team Members:</strong></p>
+            <p>{{ selectedProject.teamMemberNames }}</p>
+          </div>
+          <div>
+            <p><strong>Active:</strong></p>
+            <p>{{ selectedProject.isActive ? 'Yes' : 'No' }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

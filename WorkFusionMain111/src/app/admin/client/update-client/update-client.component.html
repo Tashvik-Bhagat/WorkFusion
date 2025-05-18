@@ -1,0 +1,105 @@
+<div class="page-container">
+    <!-- Back Button positioned outside the form container -->
+    <button class="back-button" (click)="goBack()">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+    
+    <ngx-spinner bdColor="rgba(255, 255, 255, 0.6)" size="medium" color="#4caf50" type="ball-clip-rotate"></ngx-spinner>
+    
+    <div class="update-client-container">
+      <h2>Update Client</h2>
+  
+      <form [formGroup]="updateClientForm" (ngSubmit)="onSubmit()">
+        <!-- Row 1: Client ID, User ID, Active Status -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Client ID:</label>
+            <input type="text" formControlName="clientId" readonly class="readonly-input">
+          </div>
+          <div class="form-group">
+            <label>User ID:</label>
+            <input type="text" formControlName="userId" readonly class="readonly-input">
+          </div>
+          <div class="form-group">
+            <label>Status:</label>
+            <input type="text" formControlName="isActive" readonly class="readonly-input">
+          </div>
+        </div>
+  
+        <!-- Row 2: First Name, Last Name -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name:</label>
+            <input type="text" formControlName="firstName">
+          </div>
+          <div class="form-group">
+            <label>Last Name:</label>
+            <input type="text" formControlName="lastName">
+          </div>
+        </div>
+  
+        <!-- Row 3: Gender -->
+        <div class="form-row">
+          <label>Gender:</label>
+          <div class="radio-group">
+            <label>
+              <input type="radio" formControlName="gender" value="Male"> Male
+            </label>
+            <label>
+              <input type="radio" formControlName="gender" value="Female"> Female
+            </label>
+          </div>
+        </div>
+  
+        <!-- Row 4: Email, Phone -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email:</label>
+            <input type="email" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label>Phone:</label>
+            <input type="text" formControlName="phone">
+          </div>
+        </div>
+  
+        <!-- Row 5: ID Type, ID Number -->
+        <div class="form-row">
+          <div class="form-group">
+            <label>ID Type:</label>
+            <select formControlName="idType">
+              <option value="National">National</option>
+              <option value="Driver's License">Driver's License</option>
+              <option value="Passport">Passport</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>ID Number:</label>
+            <input type="text" formControlName="idNumber">
+          </div>
+        </div>
+  
+  
+        <!-- Row 7: Present Address -->
+        <div class="form-row">
+          <label>Present Address:</label>
+          <input type="text" formControlName="presentAddress">
+        </div>
+  
+        <!-- Row 8: Permanent Address -->
+        <div class="form-row">
+          <label>Permanent Address:</label>
+          <input type="text" formControlName="permanentAddress">
+        </div>
+  
+        <div class="form-group">
+            <label>Update Employee Image:</label>
+            <input type="file" (change)="onFileChange($event)" />
+          </div>
+        
+  
+        <button type="submit" class="submit-button">Submit</button>
+      </form>
+    </div>
+  </div>
+  

@@ -1,0 +1,134 @@
+.dashboard {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+    color: #333;
+    animation: fadeIn 1.5s;
+  }
+  
+  .dashboard-title {
+    text-align: center;
+    color: #4a90e2;
+    margin-bottom: 30px;
+    font-size: 28px;
+    animation: slideInFromTop 1.5s ease-in-out;
+  }
+  
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .department-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    animation: slideInFromLeft 1.2s ease-in-out;
+    gap: 15px;
+    margin-top: 25px;
+  }
+  
+  .department-info {
+    flex: 1;
+    padding-right: 15px;
+    border-right: 2px solid #f1f1f1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .department-info h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .department-info p {
+    margin: 5px 0;
+    color: #555;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+  }
+  
+  .department-chart {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .department-chart p {
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .icon-department,
+  .icon-total,
+  .icon-progress,
+  .icon-completed,
+  .icon-hold {
+    margin-right: 8px;
+    font-size: 16px;
+    color: #4a90e2;
+  }
+  
+  /* Example Icons for Department Info */
+  .icon-department::before {
+    content: "\1F4C8"; /* Chart icon */
+  }
+  
+  .icon-total::before {
+    content: "\1F4CA"; /* Bar chart icon */
+  }
+  
+  .icon-progress::before {
+    content: "\23F3"; /* Hourglass icon */
+  }
+  
+  .icon-completed::before {
+    content: "\2705"; /* Check mark */
+  }
+  
+  .icon-hold::before {
+    content: "\23F8"; /* Pause icon */
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromTop {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideInFromLeft {
+    from {
+      transform: translateX(-50px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  

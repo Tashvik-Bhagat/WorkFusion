@@ -1,0 +1,46 @@
+<div class="container">
+    <!-- Page Title -->
+    <h1 class="page-title">Team Members</h1>
+  
+    <!-- Search Bar -->
+    <div class="search-container">
+      <input
+        type="text"
+        [(ngModel)]="searchQuery"
+        placeholder="Search by name..."
+        class="search-input"
+        (input)="filterEmployees()"
+      />
+      <button class="btn reset-btn" (click)="resetSearch()">
+        <i class="fas fa-sync-alt"></i> Reset
+      </button>
+    </div>
+  
+    <!-- Cards Container -->
+    <div class="card-container">
+      <div class="card" *ngFor="let employee of filteredEmployees">
+        <!-- Employee Image -->
+        <div class="image-container">
+          <img
+            [src]="'data:image/jpeg;base64,' + employee.employeeImage"
+            alt="Employee Image"
+            class="employee-image"
+          />
+        </div>
+  
+        <!-- Employee Details -->
+        <div class="card-details">
+          <h3>{{ employee.firstName }} {{ employee.lastName }}</h3>
+          <p>ID: {{ employee.employeeId }}</p>
+        </div>
+  
+        <!-- View More Button -->
+        <div class="card-actions">
+          <button class="btn view-btn" (click)="viewMore(employee.employeeId)">
+            <i class="fas fa-eye"></i> View More
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

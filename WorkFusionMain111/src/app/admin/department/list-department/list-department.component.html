@@ -1,0 +1,61 @@
+<div class="department-container">
+  <div class="search-add-container">
+    <!-- Search Bar: Left side -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        placeholder="Search by Department ID" 
+        [(ngModel)]="searchDepartmentId" 
+        (input)="searchByDepartmentId()" 
+        class="search-input"
+      />
+      <i class="fas fa-search search-icon"></i>
+    </div>
+
+    <!-- Add Department Button: Right side -->
+    <div class="add-department-container">
+      <button class="add-button" (click)="navigateToAddDepartment()">
+        <i class="fas fa-plus-circle"></i> Add New Department
+      </button>
+    </div>
+  </div>
+
+  <h2>Department List</h2>
+
+  <!-- Loading spinner while data is fetching -->
+  <div *ngIf="isLoading" class="spinner-container">
+    <div class="spinner"></div>
+    <p>Loading departments...</p>
+  </div>
+
+  <!-- Department table once data is loaded -->
+  <table *ngIf="!isLoading && departments.length" class="department-table">
+    <thead>
+      <tr>
+        <th>Department ID</th>
+        <th>Department Name</th>
+        <th>Created At</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{ department.departmentId }}</td>
+        <td>{{ department.departmentName }}</td>
+        <td>{{ department.createdAt | date }}</td>
+        <td>{{ department.description }}</td>
+        <td>
+          <button class="action-button" (click)="navigateToUpdateDepartment(department.departmentId)">
+            <i class="fas fa-edit"></i> Update
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Message if no departments are available -->
+  <p *ngIf="!isLoading && departments.length === 0" class="no-data">
+    <i class="fas fa-exclamation-circle"></i> No departments available.
+  </p>
+</div>

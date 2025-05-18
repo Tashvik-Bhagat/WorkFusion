@@ -1,0 +1,27 @@
+<div class="notification-container">
+  <h2>Notifications</h2>
+  <div *ngFor="let notification of notifications" 
+       class="notification-card" 
+       [ngClass]="{'read': notification.isRead}">
+    <div class="notification-header">
+      <span class="notification-icon">
+        <i class="material-icons">notifications</i>
+      </span>
+      <p class="notification-message">{{ notification.message }}</p>
+    </div>
+    <div class="notification-footer">
+      <span class="notification-date">{{ notification.createdAt | date: 'short' }}</span>
+      <div class="notification-actions">
+        <button *ngIf="!notification.isRead" 
+                class="btn-mark-read" 
+                (click)="markAsRead(notification.notificationId)">
+          <i class="material-icons">done</i> Mark as Read
+        </button>
+        <button class="btn-delete" (click)="deleteNotification(notification.notificationId)">
+          <i class="material-icons">delete</i> Delete
+        </button>
+        
+      </div>
+    </div>
+  </div>
+</div>

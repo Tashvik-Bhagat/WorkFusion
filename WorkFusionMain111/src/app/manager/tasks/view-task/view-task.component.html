@@ -1,0 +1,57 @@
+<!-- view-task.component.html -->
+<div class="task-container" *ngIf="task">
+    <h1 class="task-header">Task Details</h1>
+    <div class="task-card">
+      <div class="task-field">
+        <label>Task ID:</label>
+        <span>{{ task.taskId }}</span>
+      </div>
+      <div class="task-field">
+        <label>Task Name:</label>
+        <span>{{ task.taskName }}</span>
+      </div>
+      <div class="task-field">
+        <label>Description:</label>
+        <span>{{ task.description }}</span>
+      </div>
+      <div class="task-field">
+        <label>Assigned To:</label>
+        <span>{{ task.employeeName }}</span>
+      </div>
+      <div class="task-field">
+        <label>Project Name:</label>
+        <span>{{ task.projectName }}</span>
+      </div>
+      <div class="task-field">
+        <label>Priority:</label>
+        <span>{{ task.priority }}</span>
+      </div>
+      <div class="task-field">
+        <label>Status:</label>
+        <span>{{ task.status }}</span>
+      </div>
+      <div class="task-field">
+        <label>Start Date:</label>
+        <span>{{ task.startDate | date }}</span>
+      </div>
+      <div class="task-field">
+        <label>Due Date:</label>
+        <span>{{ task.dueDate | date }}</span>
+      </div>
+      <div class="task-field">
+        <label>End Date:</label>
+        <span>{{ task.endDate ? (task.endDate | date) : 'Not completed' }}</span>
+      </div>
+      <div class="task-field">
+        <label>Created At:</label>
+        <span>{{ task.createdAt | date }}</span>
+      </div>
+      <div class="task-field">
+        <label>Updated At:</label>
+        <span>{{ task.updatedAt | date }}</span>
+      </div>
+    </div>
+    <button class="back-button" (click)="goBack()">Back</button>
+  </div>
+  <div *ngIf="!task" class="loading">Loading task details...</div>
+  

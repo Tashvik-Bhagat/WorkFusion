@@ -1,0 +1,42 @@
+<h1 style="text-align: center;">Employee Dashboard</h1>
+<div class="dashboard">
+  <!-- Stats Section: Task Overview -->
+  <div class="stats">
+    <div class="stat">
+      <i class="fa fa-tasks"></i> <!-- Icon for Total Tasks -->
+      <h3>Total Tasks</h3>
+      <p>{{ taskStatus.total }}</p>
+    </div>
+    <div class="stat">
+      <i class="fa fa-hourglass-half"></i> <!-- Icon for Pending Tasks -->
+      <h3>Pending</h3>
+      <p>{{ taskStatus.pending }}</p>
+    </div>
+    <div class="stat">
+      <i class="fa fa-spinner"></i> <!-- Icon for Working On It -->
+      <h3>Working On It</h3>
+      <p>{{ taskStatus.workingOnIt }}</p>
+    </div>
+    <div class="stat">
+      <i class="fa fa-check-circle"></i> <!-- Icon for Completed Tasks -->
+      <h3>Completed</h3>
+      <p>{{ taskStatus.completed }}</p>
+    </div>
+  </div>
+
+  <!-- Pie Chart Section -->
+  <div class="chart">
+    <jqxChart
+      *ngIf="chartData.length > 0"
+      [width]="500"
+      [height]="300"
+      [title]="'Task Status Overview'"
+      [description]="'Pending, Working On It, Completed'"
+      [showLegend]="true"
+      [showToolTips]="true"
+      [source]="chartData"
+      [colorScheme]="'scheme05'"
+      [seriesGroups]="seriesGroups">
+    </jqxChart>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="user-requests-container">
+  <h2 *ngIf="!showClientForm">Manager Requests</h2>
+
+  <!-- Search and Filter Section -->
+  <div class="filter-container" *ngIf="!showClientForm">
+    <div class="search-filter-group">
+      <input
+        type="text"
+        placeholder="Search by Full Name"
+        [(ngModel)]="searchFullName"
+        class="search-input"
+      />
+      <button (click)="searchByFullName()" class="search-button">Search</button>
+    </div>
+    
+    <div class="filter-buttons">
+      <button (click)="filterUsers(true)" class="filter-button">Active Requests</button>
+      <button (click)="filterUsers(false)" class="filter-button">Inactive Requests</button>
+      <button (click)="loadUsers()" class="filter-button reset-button">Reset</button>
+    </div>
+  </div>
+
+  <!-- User Table -->
+  <table class="user-table" *ngIf="!showClientForm">
+    <thead>
+      <tr>
+        <th>Username</th>
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Status</th>
+        <th>Actions</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.username }}</td>
+        <td>{{ user.fullName }}</td>
+        <td>{{ user.email }}</td>
+        <td [class.active]="user.isActive" [class.inactive]="!user.isActive">
+          {{ user.isActive ? 'Active' : 'Inactive' }}
+        </td>
+        <td>
+          <label class="switch">
+            <input
+              type="checkbox"
+              [(ngModel)]="user.isActive"
+              (change)="toggleUserStatus(user.userId, user.isActive)"
+            />
+            <span class="slider"></span>
+          </label>
+        </td>
+        <td>
+          <i
+            class="plus-icon fa fa-plus"
+            [class.disabled]="!user.isActive"
+            (click)="user.isActive ? openClientForm(user) : null"
+          ></i>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Manager Registration Form -->
+  <div *ngIf="showClientForm" class="client-form-container">
+    <h2>Register Manager</h2>
+    <form [formGroup]="clientForm" (ngSubmit)="submitClientForm()">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name:</label>
+          <input type="text" formControlName="firstName" placeholder="Enter First Name" />
+        </div>
+        <div class="form-group">
+          <label>Last Name:</label>
+          <input type="text" formControlName="lastName" placeholder="Enter Last Name" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Gender:</label>
+          <div class="radio-buttons">
+            <label><input type="radio" formControlName="gender" value="Male" /> Male</label>
+            <label><input type="radio" formControlName="gender" value="Female" /> Female</label>
+            <label><input type="radio" formControlName="gender" value="Others" /> Others</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Email:</label>
+          <input type="email" formControlName="email" placeholder="Enter Email" />
+        </div>
+        <div class="form-group">
+          <label>Phone:</label>
+          <input type="text" formControlName="phone" placeholder="Enter Phone Number" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Present Address:</label>
+          <input type="text" formControlName="presentAddress" placeholder="Enter Present Address" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Permanent Address:</label>
+          <input type="text" formControlName="permanentAddress" placeholder="Enter Permanent Address" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="idType">ID Type</label>
+          <select id="idType" formControlName="idType" class="form-control">
+            <option value="" disabled>Select ID Type</option>
+            <option value="Aadhar Card">Aadhar Card</option>
+            <option value="Pan Card">Pan Card</option>
+            <option value="Driving License">Driving License</option>
+            <option value="Passport">Passport</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>ID Number:</label>
+          <input type="text" formControlName="idNumber" placeholder="Enter ID Number" />
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Date of Birth:</label>
+          <input type="date" formControlName="dateOfBirth" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>User ID:</label>
+        <input type="text" formControlName="userId" [readonly]="true" />
+      </div>
+
+      <button type="submit" [disabled]="!clientForm.valid || isSubmitting">Submit</button>
+      <button type="button" (click)="closeClientForm()">Cancel</button>
+    </form>
+  </div>
+</div>

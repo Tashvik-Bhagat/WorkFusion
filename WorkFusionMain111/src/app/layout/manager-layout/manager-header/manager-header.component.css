@@ -1,0 +1,99 @@
+/* Manager Header */
+.manager-header {
+  background-color: #0057a2;
+  color: #ffffff;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  width: 1125px;
+  z-index: 10;
+  margin-left: 0px; /* Offset by sidebar width */
+}
+
+.manager-header .logo {
+  display: flex;
+  align-items: center;
+}
+
+.manager-header .logo img {
+  height: 50px;
+  width: 200px;
+}
+
+.manager-header .header-nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.manager-header .header-nav a {
+  color: #ffffff;
+  font-size: 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+  position: relative; /* Make sure the bell icon has a reference point for the badge */
+}
+
+.manager-header .header-nav a:hover {
+  color: #ffcc00;
+}
+
+.manager-header .header-nav i {
+  font-size: 1.2rem;
+}
+
+/* Active Link in Header Navigation */
+.manager-header .header-nav a.active {
+  background-color: #004d99; /* Deep blue background for active link */
+  color: #ffcc00; /* Gold text for active state */
+  font-weight: bold; /* Bold text for emphasis */
+  padding: 10px 15px; /* Add padding to the active link for better spacing */
+  border-radius: 5px; /* Rounded corners for active link */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add subtle shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+/* Hover Effect for Active Link */
+.manager-header .header-nav a.active:hover {
+  background-color: #003366; /* Darker blue on hover */
+  color: #ffffff; /* White text for contrast */
+  transform: scale(1.1); /* Slight scale-up effect on hover */
+}
+
+/* Ensure notification badge is styled correctly and always visible */
+.notification-badge {
+  background-color: #ff0000; /* Red background */
+  color: #ffffff; /* White text */
+  font-size: 0.8rem; /* Smaller font */
+  font-weight: bold; /* Bold text */
+  border-radius: 50%; /* Circular */
+  padding: 4px; /* Padding */
+  position: absolute; /* Positioned on bell icon */
+  top: -14px; /* Adjust vertically to sit well above the icon */
+  right: -10px; /* Adjust horizontally to sit on the top-right of the bell */
+  display: inline-block; /* Ensure it's displayed */
+  text-align: center;
+  visibility: hidden; /* Make it hidden by default */
+}
+
+/* Ensure the bell icon has relative positioning to anchor the badge */
+.manager-header .header-nav a {
+  position: relative; /* This allows the badge to be placed relative to the bell icon */
+}
+
+/* Show badge if unreadCount > 0 */
+.manager-header .header-nav a.active .notification-badge {
+  visibility: visible; /* Show the badge */
+}
+
+/* Optional: Style for making the notification count more visible */
+.notification-badge {
+  visibility: visible; /* Ensure it's always visible */
+}
